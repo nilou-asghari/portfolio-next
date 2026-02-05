@@ -1,0 +1,16 @@
+{
+  "Hero": {
+    "designer": "Designer",
+    "uiux": "Fokus auf UI / UX",
+    "frontend": "Frontend-Entwicklerin",
+    "stack": "React · TypeScript · Next.js"
+  },
+
+  "Navbar": {
+    "home": "Start",
+    "projects": "Projekte",
+    "about": "Über mich",
+    "contact": "Kontakt",
+    "language": "DE"
+  }
+}
