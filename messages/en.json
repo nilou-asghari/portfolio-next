@@ -12,5 +12,17 @@
     "description": "I build modern, accessible, and scalable web applications using React, TypeScript, and Next.js.",
     "ctaProjects": "View Projects",
     "ctaContact": "Contact Me"
+  },
+  "About": {
+    "title": "About Me",
+    "bornLabel": "Born in",
+    "bornValue": "Iran, based in Germany",
+    "experienceLabel": "Experience",
+    "experienceValue": "5+ Years",
+    "birthLabel": "Date of Birth",
+    "birthValue": "September 1984",
+    "paragraph1": "I am a frontend developer with a strong focus on clean, accessible, and user-centered web interfaces. I enjoy translating complex requirements into clear and maintainable UI solutions.",
+    "paragraph2": "I have worked in both agency and modern frontend environments, collaborating closely with designers and developers to deliver responsive and scalable web applications.",
+    "cta": "Contact Me"
   }
 }
