@@ -7,9 +7,10 @@
   },
 
   "Hero": {
-    "designer": "Designer",
-    "uiux": "UI / UX focused",
+    "intro": "Hi, I’m Niloufar",
     "frontend": "Frontend Developer",
-    "stack": "React · TypeScript · Next.js"
+    "description": "I build modern, accessible, and scalable web applications using React, TypeScript, and Next.js.",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Contact Me"
   }
 }

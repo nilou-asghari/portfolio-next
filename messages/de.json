@@ -1,9 +1,10 @@
 {
   "Hero": {
-    "designer": "Designer",
-    "uiux": "Fokus auf UI / UX",
-    "frontend": "Frontend-Entwicklerin",
-    "stack": "React · TypeScript · Next.js"
+    "intro": "Hallo, ich bin Niloufar",
+    "frontend": "Frontend Entwicklerin",
+    "description": "Ich entwickle moderne, barrierefreie und skalierbare Webanwendungen mit React, TypeScript und Next.js.",
+    "ctaProjects": "Projekte ansehen",
+    "ctaContact": "Kontakt"
   },
 
   "Navbar": {

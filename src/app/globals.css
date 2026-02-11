@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+    --color-sepia-darkest: #2B2718;
+    --color-sepia-darker: #474030;
+    --color-sepia-dark: #695F4D;
+    --color-sepia: #BFB4A3;
+    --color-sepia-light: #F0EBE4;
+    --color-sepia-lighter: #F7F5F2;
+    --color-sepia-lightest: #FCFBFA;
+}
