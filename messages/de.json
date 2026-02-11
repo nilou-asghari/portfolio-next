@@ -13,5 +13,17 @@
     "about": "Über mich",
     "contact": "Kontakt",
     "language": "DE"
+  },
+  "About": {
+    "title": "Über mich",
+    "bornLabel": "Geboren in",
+    "bornValue": "Iran, Deutschland",
+    "experienceLabel": "Erfahrung",
+    "experienceValue": "5+ Jahre",
+    "birthLabel": "Geburtsdatum",
+    "birthValue": "September 1984",
+    "paragraph1": "Ich bin Frontend-Entwicklerin mit einem starken Fokus auf saubere, barrierefreie und nutzerzentrierte Weboberflächen.",
+    "paragraph2": "Ich habe sowohl in Agenturen als auch in modernen Frontend-Setups gearbeitet und eng mit UX/UI-Designern und Entwicklerteams zusammengearbeitet.",
+    "cta": "Kontakt aufnehmen"
   }
 }
