@@ -9,10 +9,10 @@ export default function Navbar() {
   const pathname = usePathname();
   const nextLocale = locale === "en" ? "de" : "en";
   return (
-    <header className="sticky top-0 z-50 border-b bg-white">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 bg-sepia">
+      <nav className="mx-auto  text-sepia-darkest flex max-w-6xl items-center justify-between px-6 py-2">
         <div className="text-lg font-semibold">Niloufar</div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 text-sm font-medium">
           <Link href="/" locale={locale}>
             {t("home")}
           </Link>
