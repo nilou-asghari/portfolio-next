@@ -16,7 +16,7 @@
   "About": {
     "title": "About Me",
     "bornLabel": "Born in",
-    "bornValue": "Iran, based in Germany",
+    "bornValue": "Iran",
     "experienceLabel": "Experience",
     "experienceValue": "5+ Years",
     "birthLabel": "Date of Birth",
@@ -24,5 +24,19 @@
     "paragraph1": "I am a frontend developer with a strong focus on clean, accessible, and user-centered web interfaces. I enjoy translating complex requirements into clear and maintainable UI solutions.",
     "paragraph2": "I have worked in both agency and modern frontend environments, collaborating closely with designers and developers to deliver responsive and scalable web applications.",
     "cta": "Contact Me"
+  },
+  "Resume": {
+    "title": "My Resume",
+    "intro": "Frontend developer with professional experience in UI-focused web development, combining modern frontend technologies with strong design sensibility.",
+    "skills": "Skills",
+    "educationTitle": "Education",
+    "education": "Education",
+    "experience": "Experience",
+    "languages": "Languages",
+    "download": "Download CV",
+    "experienceTitle": "Experience",
+    "expCalvergy": "Worked on modern frontend interfaces using React, Next.js, TypeScript, and Tailwind CSS with a strong focus on UI/UX, responsiveness, and maintainable component architecture.",
+    "expNaarvan": "Developed and maintained CMS-based websites, customized frontend templates, and collaborated with design and content teams to ensure consistent cross-browser presentation.",
+    "expRahavard": "Created and managed digital content while supporting the design and structure of user-friendly web platforms with a strong focus on usability."
   }
 }
