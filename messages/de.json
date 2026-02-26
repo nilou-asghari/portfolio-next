@@ -25,5 +25,19 @@
     "paragraph1": "Ich bin Frontend-Entwicklerin mit einem starken Fokus auf saubere, barrierefreie und nutzerzentrierte Weboberflächen.",
     "paragraph2": "Ich habe sowohl in Agenturen als auch in modernen Frontend-Setups gearbeitet und eng mit UX/UI-Designern und Entwicklerteams zusammengearbeitet.",
     "cta": "Kontakt aufnehmen"
+  },
+  "Resume": {
+    "title": "Mein Lebenslauf",
+    "intro": "Frontend-Entwicklerin mit praktischer Erfahrung in der UI-orientierten Webentwicklung und modernen Frontend-Technologien.",
+    "skills": "Kenntnisse",
+    "educationTitle": "Ausbildung",
+    "education": "Ausbildung",
+    "experience": "Berufserfahrung",
+    "languages": "Sprachen",
+    "download": "Lebenslauf herunterladen",
+    "experienceTitle": "Berufserfahrung",
+    "expCalvergy": "Mitarbeit an modernen Frontend-Oberflächen mit React, Next.js, TypeScript und Tailwind CSS mit Fokus auf UI/UX, Responsiveness und wartbare Komponentenstrukturen.",
+    "expNaarvan": "Entwicklung und Pflege von CMS-basierten Webseiten, Anpassung von Frontend-Templates sowie enge Zusammenarbeit mit Design- und Content-Teams.",
+    "expRahavard": "Erstellung und Pflege digitaler Inhalte sowie Unterstützung bei der Gestaltung nutzerfreundlicher Webplattformen."
   }
 }
