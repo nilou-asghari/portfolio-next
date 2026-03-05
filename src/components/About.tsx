@@ -49,7 +49,7 @@ export default function About() {
         alt="Niloufar Asghari – Frontend Developer"
         width={200}
         height={200}
-        className=" object-cover absolute bottom-5 left-5 w-32 z-0 h-32 md:w-48 md:h-48"
+        className=" object-contain absolute bottom-5 left-5 w-32 z-0 h-32 md:w-48 md:h-48"
       />
     </section>
   );

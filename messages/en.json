@@ -38,5 +38,21 @@
     "expCalvergy": "Worked on modern frontend interfaces using React, Next.js, TypeScript, and Tailwind CSS with a strong focus on UI/UX, responsiveness, and maintainable component architecture.",
     "expNaarvan": "Developed and maintained CMS-based websites, customized frontend templates, and collaborated with design and content teams to ensure consistent cross-browser presentation.",
     "expRahavard": "Created and managed digital content while supporting the design and structure of user-friendly web platforms with a strong focus on usability."
+  },
+  "projects": {
+    "title": "Selected Projects",
+    "description": "A curated selection of frontend applications and web platforms built with React, TypeScript and modern web technologies.",
+
+    "project1": "Movie Board",
+    "project1_desc": "A full-stack movie application built with React, TypeScript and Next.js featuring authentication, API integration and a personalized watchlist.",
+
+    "project2": "Calvergy Website",
+    "project2_desc": "Corporate website redesign focused on responsive layout, component architecture and multilingual support using Next.js and Tailwind CSS.",
+
+    "project3": "Petfect Match",
+    "project3_desc": "Responsive frontend website with modern UI patterns and clean layout structure, focused on accessibility and performance.",
+
+    "project4": "Adler Reinigung",
+    "project4_desc": "Business website developed for a German client, emphasizing usability, clarity and mobile responsiveness."
   }
 }
