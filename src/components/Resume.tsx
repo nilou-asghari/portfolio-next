@@ -13,7 +13,7 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="bg-sepia-lightest py-24 z-10 relative text-sepia-darkest"
+      className="bg-sepia-light  py-24 z-10 relative text-sepia-darkest"
     >
       <div className="mx-auto max-w-3xl  px-6">
         {/* Title */}

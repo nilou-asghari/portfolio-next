@@ -54,5 +54,17 @@
 
     "project4": "Adler Reinigung",
     "project4_desc": "Business website developed for a German client, emphasizing usability, clarity and mobile responsiveness."
+  },
+  "contact": {
+    "title": "Contact Me",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "name": "Name",
+    "name_placeholder": "Enter your full name",
+    "email_placeholder": "Enter your email address",
+    "message": "Message",
+    "message_placeholder": "Enter your message here",
+    "submit": "Submit"
   }
 }
