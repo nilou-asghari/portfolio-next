@@ -44,13 +44,16 @@ export default function Project() {
   ];
 
   return (
-    <section id="projects" className="bg-sepia-light py-32 text-sepia-darkest">
-      <div className="mx-auto max-w-5xl px-4">
+    <section
+      id="projects"
+      className="bg-sepia-lightest py-24 text-sepia-darkest"
+    >
+      <div className="mx-auto max-w-3xl px-6">
         {/* Title */}
-        <h2 className="mb-20 text-left text-8xl font-serif">{t("title")}</h2>
+        <h2 className="mb-16 text-left text-8xl font-serif">{t("title")}</h2>
 
         {/* ===== HEADER GRID ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 mb-20">
           {/* Left Column */}
           <div className="hidden md:block border-r border-sepia-dark/20" />
 

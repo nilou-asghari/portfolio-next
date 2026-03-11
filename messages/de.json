@@ -55,5 +55,17 @@
 
     "project4": "Adler Reinigung",
     "project4_desc": "Business-Webseite für einen deutschen Kunden mit Fokus auf Usability, Klarheit und mobile Optimierung."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "location": "Standort",
+    "name": "Name",
+    "name_placeholder": "Geben Sie Ihren Namen ein",
+    "email_placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "message": "Nachricht",
+    "message_placeholder": "Ihre Nachricht",
+    "submit": "Senden"
   }
 }
