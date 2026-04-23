@@ -66,5 +66,17 @@
     "message": "Message",
     "message_placeholder": "Enter your message here",
     "submit": "Submit"
+  },
+  "footer": {
+    "rights": "All Rights Reserved",
+    "developed": "Developed by"
+  },
+  "project": {
+    "year": "Year",
+    "technology": "Technology",
+    "categories": "Categories",
+    "goal": "Project Goal",
+    "nextProject": "Next Project",
+    "solution": "Solution"
   }
 }

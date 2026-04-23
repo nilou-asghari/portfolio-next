@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Resume from "@/components/Resume";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Resume />
       <Project />
       <Contact />
+      <Footer />
     </main>
   );
 }
