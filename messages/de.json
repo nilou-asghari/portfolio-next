@@ -67,5 +67,18 @@
     "message": "Nachricht",
     "message_placeholder": "Ihre Nachricht",
     "submit": "Senden"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "developed": "Entwickelt von"
+  },
+
+  "project": {
+    "year": "Jahr",
+    "technology": "Technologie",
+    "categories": "Kategorien",
+    "goal": "Projektziel",
+    "nextProject": "Nächstes Projekt",
+    "solution": "Lösung"
   }
 }

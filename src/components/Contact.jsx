@@ -59,20 +59,24 @@ export default function Contact() {
         {/* Grid Layout */}
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Left Column */}
-          <div className="md:col-span-1 border-r border-sepia-dark p-6 space-y-5">
+          <div className="md:col-span-1 border-r border-sepia-dark p-4 md:p-6 space-y-4 md:space-y-5">
             <div>
-              <p className="text-sm font-medium">{t("phone")}</p>
-              <p className="text-sm opacity-70">+49 1573 448 4519</p>
+              <p className="text-xs md:text-sm font-medium">{t("phone")}</p>
+              <p className="text-xs md:text-sm opacity-70">+49 1573 448 4519</p>
             </div>
 
             <div>
-              <p className="text-sm font-medium">{t("email")}</p>
-              <p className="text-sm opacity-70">nilou.asghari@gmail.com</p>
+              <p className="text-xs md:text-sm font-medium">{t("email")}</p>
+              <p className="text-xs md:text-sm opacity-70">
+                nilou.asghari@gmail.com
+              </p>
             </div>
 
             <div>
-              <p className="text-sm font-medium">{t("location")}</p>
-              <p className="text-sm opacity-70">Karlsruhe, Germany</p>
+              <p className="text-xs md:text-sm font-medium">{t("location")}</p>
+              <p className="text-xs md:text-sm opacity-70">
+                Karlsruhe, Germany
+              </p>
             </div>
           </div>
 
@@ -92,7 +96,7 @@ export default function Contact() {
                 type="text"
                 {...register("name")}
                 placeholder={t("name_placeholder")}
-                className="w-full border border-sepia-dark/30 bg-transparent px-4 py-3"
+                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-sm md:text-base"
               />
 
               {errors.name && (
@@ -127,10 +131,10 @@ export default function Contact() {
 
               <textarea
                 id="message"
-                rows="5"
+                rows="4 md:5"
                 {...register("message")}
                 placeholder={t("message_placeholder")}
-                className="w-full border border-sepia-dark/30 bg-transparent px-4 py-3"
+                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-sm md:text-base"
               />
 
               {errors.message && (
