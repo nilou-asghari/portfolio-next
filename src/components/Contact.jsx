@@ -50,7 +50,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-sepia-light py-24 relative z-10 text-sepia-darkest"
+      className="bg-sepia-light py-24 relative  text-sepia-darkest"
     >
       <div className="mx-auto max-w-3xl px-6">
         {/* Title */}
@@ -160,7 +160,7 @@ export default function Contact() {
         alt=""
         width={200}
         height={200}
-        className="absolute bottom-10 left-10 w-32"
+        className="absolute bottom-10 left-10 w-32 "
       />
 
       <Image
@@ -168,7 +168,7 @@ export default function Contact() {
         alt=""
         width={200}
         height={200}
-        className="absolute bottom-10 right-10 w-32"
+        className="absolute bottom-10 right-10 w-32 "
       />
     </section>
   );

@@ -6,9 +6,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-sepia-lightest py-12 md:py-24 relative z-10 text-sepia-darkest"
+      className="bg-sepia-lightest py-12 md:py-24 relative  text-sepia-darkest"
     >
-      <div className="mx-auto max-w-3xl px-4 md:px-6">
+      <div className="mx-auto max-w-4xl px-4 md:px-6">
         {/* Title */}
         <h2 className="mb-8 md:mb-16 text-4xl md:text-6xl lg:text-8xl font-serif text-left">
           {t("title")}
@@ -61,7 +61,7 @@ export default function About() {
         alt="Niloufar Asghari – Frontend Developer"
         width={200}
         height={200}
-        className="object-contain absolute bottom-2 md:bottom-5 left-2 md:left-5 w-20 md:w-32 lg:w-48 z-0 h-20 md:h-32 lg:h-48"
+        className="object-contain absolute  md:bottom-5 left-2 md:left-5 md:w-32 lg:w-48 h-20 md:h-32 lg:h-48 -bottom-5 -right-2.5 w-16"
       />
     </section>
   );
