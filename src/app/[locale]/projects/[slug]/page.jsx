@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }) {
               <div className="md:col-span-2 md:pl-12 grid grid-cols-2 md:grid-cols-4 gap-10">
                 {/* Year */}
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] opacity-50 mb-2">
+                  <p className="text-sm uppercase tracking-widest opacity-50 mb-2">
                     {t("year")}
                   </p>
                   <p className="text-xl font-bold">{project.year}</p>
@@ -53,7 +53,7 @@ export default async function ProjectPage({ params }) {
 
                 {/* Tech */}
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] opacity-50 mb-2">
+                  <p className="text-sm uppercase tracking-widest opacity-50  mb-2">
                     {t("technology")}
                   </p>
                   <p className="text-xl font-bold leading-tight">
@@ -63,7 +63,7 @@ export default async function ProjectPage({ params }) {
 
                 {/* Categories */}
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] opacity-50 mb-2">
+                  <p className="text-sm uppercase tracking-widest opacity-50  mb-2">
                     {t("categories")}
                   </p>
                   <p className="text-xl font-bold leading-tight">
@@ -73,7 +73,7 @@ export default async function ProjectPage({ params }) {
 
                 {/* LIVE LINK */}
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] opacity-50 mb-2">
+                  <p className="text-sm uppercase tracking-widest opacity-50  mb-2">
                     Live
                   </p>
 
@@ -157,7 +157,7 @@ export default async function ProjectPage({ params }) {
       {/* ================= NEXT PROJECT ================= */}
       {nextProject && (
         <section className="py-32 border-t border-sepia-dark/10 text-center">
-          <p className="text-xs uppercase tracking-[0.4em] opacity-50 mb-6">
+          <p className="text-sm uppercase tracking-widest opacity-50 uppercase tracking-[0.4em] opacity-50 mb-6">
             {t("nextProject")}
           </p>
 

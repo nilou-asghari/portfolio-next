@@ -6,11 +6,11 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-sepia-lightest py-12 md:py-24 relative z-10 text-sepia-darkest"
+      className="bg-sepia-lightest py-20 md:py-32 relative  text-sepia-darkest"
     >
-      <div className="mx-auto max-w-3xl px-4 md:px-6">
+      <div className="mx-auto max-w-4xl px-6 md:px-12">
         {/* Title */}
-        <h2 className="mb-8 md:mb-16 text-4xl md:text-6xl lg:text-8xl font-serif text-left">
+        <h2 className="mb-8 md:mb-16 text-5xl md:text-7xl font-serif font-serif text-left">
           {t("title")}
         </h2>
 
@@ -19,31 +19,37 @@ export default function About() {
           {/* Left – Stats */}
           <div className="md:col-span-1 md:border-r border-sepia-dark p-4 md:p-6 space-y-5">
             <div>
-              <p className="text-xs text-sepia-dark">{t("bornLabel")}</p>
-              <p className="font-semibold text-sm md:text-base">
+              <p className="text-sm uppercase tracking-widest opacity-50 text-sepia-dark">
+                {t("bornLabel")}
+              </p>
+              <p className="font-semibold text-base md:text-lg leading-relaxed">
                 {t("bornValue")}
               </p>
             </div>
             <div>
-              <p className="text-xs text-sepia-dark">{t("experienceLabel")}</p>
-              <p className="font-semibold text-sm md:text-base">
+              <p className="text-sm uppercase tracking-widest opacity-50 text-sepia-dark">
+                {t("experienceLabel")}
+              </p>
+              <p className="font-semibold text-base md:text-lg leading-relaxed">
                 {t("experienceValue")}
               </p>
             </div>
             <div>
-              <p className="text-xs text-sepia-dark">{t("birthLabel")}</p>
-              <p className="font-semibold text-sm md:text-base">
+              <p className="text-sm uppercase tracking-widest opacity-50 text-sepia-dark">
+                {t("birthLabel")}
+              </p>
+              <p className="font-semibold text-base md:text-lg leading-relaxed">
                 {t("birthValue")}
               </p>
             </div>
           </div>
           {/* Right – Description */}
           <div className="md:col-span-2 p-4 md:p-6">
-            <p className="mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+            <p className="mb-4 md:mb-6 leading-relaxed text-base md:text-lg leading-relaxed">
               {t("paragraph1")}
             </p>
 
-            <p className="mb-6 md:mb-10 leading-relaxed text-sm md:text-base">
+            <p className="mb-6 md:mb-10 leading-relaxed text-base md:text-lg leading-relaxed">
               {t("paragraph2")}
             </p>
 
@@ -61,7 +67,7 @@ export default function About() {
         alt="Niloufar Asghari – Frontend Developer"
         width={200}
         height={200}
-        className="object-contain absolute bottom-2 md:bottom-5 left-2 md:left-5 w-20 md:w-32 lg:w-48 z-0 h-20 md:h-32 lg:h-48"
+        className="object-contain absolute  md:bottom-5 left-2 md:left-5 md:w-32 lg:w-48 h-20 md:h-32 lg:h-48 -bottom-5 -right-2.5 w-16"
       />
     </section>
   );

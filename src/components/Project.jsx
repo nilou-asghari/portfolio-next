@@ -49,9 +49,9 @@ export default function Project() {
       id="projects"
       className="bg-sepia-lightest py-12 md:py-24 text-sepia-darkest"
     >
-      <div className="mx-auto max-w-3xl px-4 md:px-6">
+      <div className="mx-auto max-w-6xl md:max-w-7xl px-6 md:px-12">
         {/* Title */}
-        <h2 className="mb-8 md:mb-16 text-4xl md:text-6xl lg:text-8xl font-serif text-left">
+        <h2 className="mb-8 md:mb-16 text-5xl md:text-7xl font-serif font-serif text-left">
           {t("title")}
         </h2>
 
@@ -92,7 +92,7 @@ export default function Project() {
                 {/* Info */}
                 <div className="flex flex-col md:flex-row md:justify-between md:items-end border-b border-sepia-dark/10 pb-6 md:pb-8 gap-4">
                   <div className="flex-1">
-                    <p className="text-xs uppercase tracking-[0.3em] opacity-50 mb-2 md:mb-3">
+                    <p className="text-sm uppercase tracking-widest opacity-50  mb-2 md:mb-3">
                       {project.category}
                     </p>
 

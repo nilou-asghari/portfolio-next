@@ -5,12 +5,12 @@ export default function Hero() {
   const t = useTranslations("Hero");
 
   return (
-    <section className="min-h-screen flex bg-sepia-light items-center py-12 md:py-0">
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:gap-4 px-4 md:px-6 md:grid-cols-2 w-full">
+    <section className="min-h-screen flex bg-sepia-light items-center py-20 md:py-32">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:gap-4 px-6 md:px-12 md:grid-cols-2 w-full">
         {/* Image */}
         <div className="order-first md:order-last flex justify-center md:justify-start">
-          <div className="relative w-64 h-64 md:w-80 md:h-96 shrink-0">
-            <div className="absolute inset-0 col-start-1 row-start-1 rounded overflow-hidden">
+          <div className="relative w-64 h-64 md:w-90 md:h-110 shrink-0">
+            <div className="absolute inset-0 col-start-1 row-start-1 rounded overflow-hidden z-10">
               <Image
                 src="/profile5.png"
                 alt="Niloufar Asghari – Frontend Developer"
@@ -19,7 +19,7 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute inset-0 col-start-1 row-start-1">
+            <div className="absolute inset-0 col-start-1 row-start-1 z-0">
               <Image
                 src="/parallax1.svg"
                 alt="Niloufar Asghari – Frontend Developer"
@@ -32,7 +32,7 @@ export default function Hero() {
 
         {/* Content */}
         <div className="flex flex-col justify-center text-center md:text-left order-last md:order-first">
-          <p className="text-xs md:text-sm uppercase tracking-wide text-sepia-darkest">
+          <p className="text-sm uppercase tracking-widest opacity-50 md:text-2xl uppercase tracking-wide text-sepia-darkest">
             {t("intro")}
           </p>
 
@@ -40,7 +40,7 @@ export default function Hero() {
             {t("frontend")}
           </h1>
 
-          <p className="mt-4 md:mt-4 max-w-md mx-auto md:mx-0 text-sm md:text-base text-sepia-darkest">
+          <p className="mt-4 md:mt-4 max-w-md mx-auto md:mx-0 text-base md:text-lg leading-relaxed text-sepia-darkest">
             {t("description")}
           </p>
 
