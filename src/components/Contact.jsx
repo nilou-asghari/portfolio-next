@@ -50,9 +50,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-sepia-light py-24 relative  text-sepia-darkest"
+      className="bg-sepia-light py-20 md:py-32 relative text-sepia-darkest"
     >
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="mx-auto max-w-6xl md:max-w-7xl px-6 md:px-12">
         {/* Title */}
         <h2 className="mb-16 text-left text-8xl font-serif">{t("title")}</h2>
 
@@ -61,20 +61,28 @@ export default function Contact() {
           {/* Left Column */}
           <div className="md:col-span-1 border-r border-sepia-dark p-4 md:p-6 space-y-4 md:space-y-5">
             <div>
-              <p className="text-xs md:text-sm font-medium">{t("phone")}</p>
-              <p className="text-xs md:text-sm opacity-70">+49 1573 448 4519</p>
+              <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-medium">
+                {t("phone")}
+              </p>
+              <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm opacity-70">
+                +49 1573 448 4519
+              </p>
             </div>
 
             <div>
-              <p className="text-xs md:text-sm font-medium">{t("email")}</p>
-              <p className="text-xs md:text-sm opacity-70">
+              <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-medium">
+                {t("email")}
+              </p>
+              <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm opacity-70">
                 nilou.asghari@gmail.com
               </p>
             </div>
 
             <div>
-              <p className="text-xs md:text-sm font-medium">{t("location")}</p>
-              <p className="text-xs md:text-sm opacity-70">
+              <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-medium">
+                {t("location")}
+              </p>
+              <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm opacity-70">
                 Karlsruhe, Germany
               </p>
             </div>
@@ -96,7 +104,7 @@ export default function Contact() {
                 type="text"
                 {...register("name")}
                 placeholder={t("name_placeholder")}
-                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-sm md:text-base"
+                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-relaxed"
               />
 
               {errors.name && (
@@ -134,7 +142,7 @@ export default function Contact() {
                 rows="4 md:5"
                 {...register("message")}
                 placeholder={t("message_placeholder")}
-                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-sm md:text-base"
+                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-relaxed"
               />
 
               {errors.message && (

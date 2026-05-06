@@ -13,11 +13,11 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="bg-sepia-light py-12 md:py-24 relative text-sepia-darkest"
+      className="bg-sepia-light py-20 md:py-32 relative text-sepia-darkest"
     >
       <div className="mx-auto max-w-4xl px-4 md:px-6">
         {/* Title */}
-        <h2 className="mb-8 md:mb-16 text-4xl md:text-6xl lg:text-8xl font-serif text-left">
+        <h2 className="mb-8 md:mb-16 text-5xl md:text-7xl font-serif font-serif text-left">
           {t("title")}
         </h2>
 
@@ -33,7 +33,7 @@ export default function Resume() {
 
             {/* 2. Skills Section */}
             <div className="space-y-6 md:space-y-8">
-              <h3 className="text-lg md:text-2xl font-serif italic">
+              <h3 className="text-xl md:text-2xl font-serif font-serif italic">
                 {t("skills")}
               </h3>
               <ul className="space-y-3 md:space-y-4">
@@ -73,22 +73,26 @@ export default function Resume() {
                   <div className="space-y-5 md:space-y-6">
                     {/* WBS */}
                     <div className="group">
-                      <span className="text-xs opacity-60">2024</span>
-                      <h4 className="font-bold text-sm md:text-base leading-tight">
+                      <span className="text-sm uppercase tracking-widest opacity-50 opacity-60">
+                        2024
+                      </span>
+                      <h4 className="font-bold text-base md:text-lg leading-relaxed leading-tight">
                         Web Development Bootcamp
                       </h4>
-                      <p className="text-xs md:text-sm opacity-80">
+                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm opacity-80">
                         WBS Coding School · Berlin
                       </p>
                     </div>
 
                     {/* Bachelor */}
                     <div>
-                      <span className="text-xs opacity-60">2007</span>
-                      <h4 className="font-bold text-sm md:text-base leading-tight">
+                      <span className="text-sm uppercase tracking-widest opacity-50 opacity-60">
+                        2007
+                      </span>
+                      <h4 className="font-bold text-base md:text-lg leading-relaxed leading-tight">
                         Bachelor's Degree in Computer Software Engineering
                       </h4>
-                      <p className="text-xs md:text-sm opacity-80">
+                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm opacity-80">
                         Khayyam University · Mashhad
                       </p>
                     </div>
@@ -134,11 +138,13 @@ export default function Resume() {
                   <div className="space-y-8 md:space-y-10">
                     {/* Calvergy */}
                     <div className="space-y-2">
-                      <span className="text-xs opacity-60">2025 – 2026</span>
-                      <h4 className="font-bold text-sm md:text-base uppercase">
+                      <span className="text-sm uppercase tracking-widest opacity-50 opacity-60">
+                        2025 – 2026
+                      </span>
+                      <h4 className="font-bold text-base md:text-lg leading-relaxed uppercase">
                         Frontend Developer (Intern)
                       </h4>
-                      <p className="text-xs md:text-sm font-serif italic">
+                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-serif italic">
                         Calvergy GmbH
                       </p>
                       <p className="text-sm leading-relaxed opacity-80">
@@ -148,11 +154,13 @@ export default function Resume() {
 
                     {/* Naarvan */}
                     <div className="space-y-2">
-                      <span className="text-xs opacity-60">2020 – 2023</span>
-                      <h4 className="font-bold text-sm md:text-base uppercase">
+                      <span className="text-sm uppercase tracking-widest opacity-50 opacity-60">
+                        2020 – 2023
+                      </span>
+                      <h4 className="font-bold text-base md:text-lg leading-relaxed uppercase">
                         Web & CMS Developer
                       </h4>
-                      <p className="text-xs md:text-sm font-serif italic">
+                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-serif italic">
                         Naarvan Meta-communication
                       </p>
                       <p className="text-sm leading-relaxed opacity-80">
@@ -162,11 +170,13 @@ export default function Resume() {
 
                     {/* Rahavard */}
                     <div className="space-y-2">
-                      <span className="text-xs opacity-60">2017 – 2022</span>
-                      <h4 className="font-bold text-sm md:text-base uppercase">
+                      <span className="text-sm uppercase tracking-widest opacity-50 opacity-60">
+                        2017 – 2022
+                      </span>
+                      <h4 className="font-bold text-base md:text-lg leading-relaxed uppercase">
                         Content Creator & Web Specialist
                       </h4>
-                      <p className="text-xs md:text-sm font-serif italic">
+                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-serif italic">
                         Rahavard Digital
                       </p>
                       <p className="text-sm leading-relaxed opacity-80">
@@ -179,7 +189,7 @@ export default function Resume() {
                 {/* Download CV Button */}
                 <a
                   href="/path-to-your-cv.pdf"
-                  className="inline-block w-full text-center py-2 md:py-3 border border-sepia-darkest text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-all hover:bg-sepia-darkest hover:text-sepia-lightest"
+                  className="inline-block w-full text-center py-2 md:py-3 border border-sepia-darkest text-sm uppercase tracking-widest opacity-50 md:text-sm font-bold uppercase tracking-[0.2em] transition-all hover:bg-sepia-darkest hover:text-sepia-lightest"
                 >
                   Download CV
                 </a>

@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-sepia">
-      <nav className="mx-auto text-sepia-darkest flex max-w-6xl items-center justify-between px-4 md:px-6 py-3 md:py-2">
+      <nav className="mx-auto text-sepia-darkest flex max-w-6xl items-center justify-between px-6 md:px-12 py-3 md:py-2">
         {/* Logo */}
         <div className="text-lg md:text-xl font-semibold">Niloufar</div>
 
@@ -22,13 +22,13 @@ export default function Navbar() {
           <Link href="/" locale={locale}>
             {t("home")}
           </Link>
-          <Link href="/projects" locale={locale}>
+          <Link href="/#projects" locale={locale}>
             {t("projects")}
           </Link>
-          <Link href="/about" locale={locale}>
+          <Link href="/#about" locale={locale}>
             {t("about")}
           </Link>
-          <Link href="/contact" locale={locale}>
+          <Link href="/#contact" locale={locale}>
             {t("contact")}
           </Link>
         </div>

@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-sepia-lighter border-t border-sepia-dark/20 p-10">
-      <div className="mx-auto max-w-4xl px-8 flex items-center justify-between text-sm text-sepia-darkest">
+      <div className="mx-auto max-w-4xl px-6 md:px-12 flex items-center justify-between text-sm text-sepia-darkest">
         {/* Social icons */}
         <div className="flex items-center gap-2">
           {/* GitHub */}
