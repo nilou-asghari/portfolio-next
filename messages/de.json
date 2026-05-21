@@ -79,6 +79,12 @@
     "categories": "Kategorien",
     "goal": "Projektziel",
     "nextProject": "Nächstes Projekt",
-    "solution": "Lösung"
+    "solution": "Lösung",
+    "problem": "Problem",
+    "role": "Rolle",
+
+    "result": "Ergebnis",
+    "context": "Die Herausforderung",
+    "process": "Hinter dem Projekt"
   }
 }

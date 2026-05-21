@@ -77,6 +77,11 @@
     "categories": "Categories",
     "goal": "Project Goal",
     "nextProject": "Next Project",
-    "solution": "Solution"
+    "solution": "Solution",
+    "problem": "Problem",
+    "role": "Role",
+    "result": "Result",
+    "context": "The Challenge",
+    "process": "Behind the Work"
   }
 }
