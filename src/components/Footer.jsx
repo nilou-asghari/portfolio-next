@@ -1,7 +1,7 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl'
 
 export default function Footer() {
-  const t = useTranslations("footer");
+  const t = useTranslations('footer')
 
   return (
     <footer className="bg-sepia-lighter border-t border-sepia-dark/20 p-10">
@@ -13,12 +13,12 @@ export default function Footer() {
             href="https://github.com/nilou-asghari"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative pb-1"
+            className="group relative pb-1 transition-all duration-300 ease-out hover:-translate-y-1"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -33,12 +33,12 @@ export default function Footer() {
             href="https://www.linkedin.com/in/niloufarasghari/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative pb-1 hover:opacity-80 transition"
+            className="group relative pb-1 transition-all duration-300 ease-out hover:-translate-y-1 hover:opacity-70"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
+              width="20"
+              height="20"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -51,7 +51,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center">
-          © {new Date().getFullYear()} {t("rights")}
+          © {new Date().getFullYear()} {t('rights')}
         </div>
 
         {/* Credit */}
@@ -60,5 +60,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
