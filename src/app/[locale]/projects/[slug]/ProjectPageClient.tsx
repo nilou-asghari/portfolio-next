@@ -37,6 +37,7 @@ type Props = {
   project: Project
   nextProject: Project | null
   labels: Labels
+  locale: string
 }
 
 // ─── Variants ────────────────────────────────────────────────────────────────
@@ -104,14 +105,14 @@ function AnimatedSection({
   )
 }
 
-// ─── Client Component ────────────────────────────────────────────────────────
+// ─── Component ───────────────────────────────────────────────────────────────
 
-export default function ProjectPageClient({ project, nextProject, labels }: Props) {
+export default function ProjectPageClient({ project, nextProject, labels, locale }: Props) {
   return (
     <>
       {/* ── HERO ── */}
       <section className="relative">
-        {/* Giant title slides up on load */}
+        {/* Giant title */}
         <div className="relative bg-sepia-lightest h-32 md:h-48 mx-auto max-w-6xl px-6">
           <div className="absolute -bottom-[1.8rem] md:-bottom-[3.6rem]">
             <motion.h1
@@ -125,7 +126,7 @@ export default function ProjectPageClient({ project, nextProject, labels }: Prop
           </div>
         </div>
 
-        {/* Meta info — staggered spring pop */}
+        {/* Meta info */}
         <div className="bg-sepia-light py-32">
           <div className="mx-auto max-w-4xl px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -135,45 +136,59 @@ export default function ProjectPageClient({ project, nextProject, labels }: Prop
                 variants={stagger(0.35, 0.1)}
                 initial="hidden"
                 animate="show"
-                className="md:col-span-2 md:pl-12 grid grid-cols-2 md:grid-cols-4 gap-10"
+                className="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8"
               >
+                {/* Year */}
                 <motion.div variants={metaItem}>
                   <p className="text-sm uppercase tracking-widest opacity-50 mb-2">{labels.year}</p>
                   <p className="text-xl font-bold">{project.year}</p>
                 </motion.div>
 
-                <motion.div variants={metaItem}>
-                  <p className="text-sm uppercase tracking-widest opacity-50 mb-2">
-                    {labels.technology}
-                  </p>
-                  <p className="text-xl font-bold leading-tight">
-                    {project.technologies.join(', ')}
-                  </p>
-                </motion.div>
-
+                {/* Category */}
                 <motion.div variants={metaItem}>
                   <p className="text-sm uppercase tracking-widest opacity-50 mb-2">
                     {labels.categories}
                   </p>
-                  <p className="text-xl font-bold leading-tight">{project.categories.join(', ')}</p>
+                  <p className="text-base font-bold leading-snug">
+                    {project.categories.join(', ')}
+                  </p>
                 </motion.div>
 
-                <motion.div variants={metaItem}>
-                  <p className="text-sm uppercase tracking-widest opacity-50 mb-2">Live</p>
-                  {project.live && (
+                {/* Live link — only rendered when a URL exists */}
+                {project.live && (
+                  <motion.div variants={metaItem}>
+                    <p className="text-sm uppercase tracking-widest opacity-50 mb-2">Live</p>
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-block text-xl font-bold transition-all duration-300 ease-out hover:opacity-70"
+                      className="group relative inline-block text-xl font-bold transition-opacity duration-300 hover:opacity-60"
                     >
                       View →
                       <span className="absolute left-0 -bottom-1 h-px w-full bg-sepia-darkest transition-all duration-300 ease-out group-hover:w-0" />
                     </a>
-                  )}
-                </motion.div>
+                  </motion.div>
+                )}
               </motion.div>
             </div>
+
+            {/* Tech stack — tags, not a comma string */}
+            <motion.div
+              variants={stagger(0.55, 0.08)}
+              initial="hidden"
+              animate="show"
+              className="mt-10 md:mt-12 flex flex-wrap gap-2"
+            >
+              {project.technologies.map((tech) => (
+                <motion.span
+                  key={tech}
+                  variants={metaItem}
+                  className="text-xs uppercase tracking-wider px-3 py-1.5 border border-sepia-dark/30 rounded-sm opacity-70"
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -186,16 +201,19 @@ export default function ProjectPageClient({ project, nextProject, labels }: Prop
           width={1600}
           height={900}
           className="w-full h-auto object-cover"
+          priority
         />
       </motion.section>
 
       {/* ── THE CHALLENGE ── */}
       {project.context && (
         <section className="py-20 bg-sepia-light">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl px-6">
             <AnimatedSection>
-              <h2 className="text-5xl font-serif font-semibold mb-8">{labels.context}</h2>
-              <p className="leading-relaxed opacity-80">{project.context}</p>
+              <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-8">
+                {labels.context}
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed opacity-80">{project.context}</p>
             </AnimatedSection>
           </div>
         </section>
@@ -204,34 +222,42 @@ export default function ProjectPageClient({ project, nextProject, labels }: Prop
       {/* ── SOLUTION ── */}
       {project.solution && (
         <section className="py-20 bg-sepia-lightest">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl px-6">
             <AnimatedSection>
-              <h2 className="text-5xl font-serif font-semibold mb-8">{labels.solution}</h2>
-              {project.solution.map((paragraph, i) => (
-                <p key={i} className="leading-relaxed mb-6 opacity-80">
-                  {paragraph}
-                </p>
-              ))}
+              <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-8">
+                {labels.solution}
+              </h2>
+              <div className="space-y-5">
+                {project.solution.map((paragraph, i) => (
+                  <p key={i} className="text-base md:text-lg leading-relaxed opacity-80">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </AnimatedSection>
           </div>
         </section>
       )}
 
       {/* ── GALLERY ── */}
-      {project.gallery && (
+      {project.gallery && project.gallery.length > 0 && (
         <section className="py-20 px-6 bg-sepia-light">
           <motion.div
             variants={stagger(0, 0.15)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
-            className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12"
+            className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
           >
             {project.gallery.map((img, i) => (
-              <motion.div key={i} variants={imageReveal} className="group overflow-hidden">
+              <motion.div
+                key={i}
+                variants={imageReveal}
+                className="group overflow-hidden rounded-sm"
+              >
                 <Image
                   src={img}
-                  alt={`${project.title} gallery image ${i + 1}`}
+                  alt={`${project.title} — screenshot ${i + 1}`}
                   width={900}
                   height={600}
                   className="w-full h-auto object-cover transition-all duration-700 ease-out group-hover:scale-[1.03]"
@@ -245,10 +271,12 @@ export default function ProjectPageClient({ project, nextProject, labels }: Prop
       {/* ── BEHIND THE WORK ── */}
       {project.process && (
         <section className="py-20 bg-sepia-lightest">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl px-6">
             <AnimatedSection>
-              <h2 className="text-5xl font-serif font-semibold mb-8">{labels.process}</h2>
-              <p className="leading-relaxed opacity-80">{project.process}</p>
+              <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-8">
+                {labels.process}
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed opacity-80">{project.process}</p>
             </AnimatedSection>
           </div>
         </section>
@@ -257,16 +285,18 @@ export default function ProjectPageClient({ project, nextProject, labels }: Prop
       {/* ── RESULT ── */}
       {project.result && (
         <section className="py-20 bg-sepia-light">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl px-6">
             <AnimatedSection>
-              <h2 className="text-5xl font-serif font-semibold mb-8">{labels.result}</h2>
-              <p className="leading-relaxed opacity-80">{project.result}</p>
+              <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-8">
+                {labels.result}
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed opacity-80">{project.result}</p>
             </AnimatedSection>
           </div>
         </section>
       )}
 
-      {/* ── NEXT PROJECT ── */}
+      {/* ── NEXT PROJECT — locale-aware link ── */}
       {nextProject && (
         <section className="py-32 border-t border-sepia-dark/10 text-center bg-sepia-lightest">
           <div className="mx-auto max-w-3xl px-6">
@@ -286,16 +316,22 @@ export default function ProjectPageClient({ project, nextProject, labels }: Prop
               whileInView="show"
               viewport={{ once: true, amount: 0.5 }}
             >
-              <Link href={`/projects/${nextProject.slug}`} className="group relative inline-block">
-                <span className="text-6xl md:text-8xl font-serif transition-all duration-500 ease-out group-hover:opacity-70">
+              <Link
+                href={`/${locale}/projects/${nextProject.slug}`}
+                className="group relative inline-block"
+              >
+                <span className="text-6xl md:text-8xl font-serif transition-opacity duration-500 ease-out group-hover:opacity-70">
                   {nextProject.title}
                 </span>
-                {/* Underline grows in on scroll, retracts on hover */}
                 <motion.span
                   initial={{ width: '0%' }}
                   whileInView={{ width: '100%' }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const, delay: 0.3 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1] as const,
+                    delay: 0.3,
+                  }}
                   className="absolute left-0 -bottom-3 h-px bg-sepia-darkest group-hover:w-0 transition-all duration-500 ease-out"
                 />
               </Link>

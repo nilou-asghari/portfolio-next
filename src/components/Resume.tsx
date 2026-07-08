@@ -43,33 +43,17 @@ const popIn = {
   },
 }
 
-/** Generic stagger container */
 const stagger = (delay = 0, gap = 0.13) => ({
   hidden: {},
   show: { transition: { staggerChildren: gap, delayChildren: delay } },
 })
 
-/** Dot fills in from transparent to solid */
-const dotFill = (filled: boolean) => ({
-  hidden: { scale: 0.4, opacity: 0 },
-  show: {
-    scale: 1,
-    opacity: filled ? 1 : 0.35,
-    transition: { type: 'spring' as const, stiffness: 400, damping: 20 },
-  },
-})
+// ─── Skill types ─────────────────────────────────────────────────────────────
 
-const decorDrift = (x: number, y: number) => ({
-  hidden: { opacity: 0, x, y },
-  show: {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] as const },
-  },
-})
+type Skill = { name: string; level: number }
+type SkillGroup = { category: string; items: Skill[] }
 
-// ─── Reusable animated dot row ───────────────────────────────────────────────
+// ─── Dot row ─────────────────────────────────────────────────────────────────
 
 function DotRow({
   total,
@@ -93,7 +77,14 @@ function DotRow({
       {Array.from({ length: total }).map((_, i) => (
         <motion.div
           key={i}
-          variants={dotFill(i < filled)}
+          variants={{
+            hidden: { scale: 0.4, opacity: 0 },
+            show: {
+              scale: 1,
+              opacity: i < filled ? 1 : 0.25,
+              transition: { type: 'spring' as const, stiffness: 400, damping: 20 },
+            },
+          }}
           className={`${dotClass} rounded-full ${
             i < filled ? 'bg-sepia-dark' : 'border border-sepia-dark/30'
           }`}
@@ -108,18 +99,48 @@ function DotRow({
 export default function Resume() {
   const t = useTranslations('Resume')
 
+  // ── Skill groups — varied ratings ──────────────────────────────
+  // 5 = expert / daily use   4 = proficient   3 = comfortable   2 = familiar
+  const skillGroups: SkillGroup[] = [
+    {
+      category: 'Frontend',
+      items: [
+        { name: 'JavaScript', level: 5 },
+        { name: 'React', level: 4 },
+        { name: 'Next.js', level: 4 },
+        { name: 'TypeScript', level: 3 },
+      ],
+    },
+    {
+      category: 'Styling',
+      items: [
+        { name: 'CSS / SCSS', level: 5 },
+        { name: 'Tailwind CSS', level: 4 },
+        { name: 'Responsive Design', level: 5 },
+      ],
+    },
+    {
+      category: 'Tools & Other',
+      items: [
+        { name: 'Git / GitHub', level: 4 },
+        { name: 'Figma', level: 3 },
+        { name: 'REST APIs', level: 3 },
+        { name: 'Node.js / Express', level: 3 },
+        { name: 'MongoDB', level: 2 },
+        { name: 'Drupal / CMS', level: 5 },
+      ],
+    },
+  ]
+
   const languages = [
     { name: 'Persian', level: 5, label: 'Native' },
     { name: 'English', level: 4, label: 'C1' },
     { name: 'German', level: 3, label: 'B2' },
   ]
 
-  const skills = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS']
-
   return (
     <section id="resume" className="bg-sepia-light py-20 md:py-32 relative text-sepia-darkest">
       <div className="mx-auto max-w-4xl px-4 md:px-6">
-        {/* Title */}
         <motion.h2
           variants={titleVariant}
           initial="hidden"
@@ -130,14 +151,10 @@ export default function Resume() {
           {t('title')}
         </motion.h2>
 
-        {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
-          {/* Left border column */}
           <div className="md:col-span-1 border-b md:border-b-0 md:border-r border-sepia-dark mb-6 md:mb-0 md:h-full" />
 
-          {/* Right column */}
           <div className="md:col-span-2 space-y-12 md:space-y-20">
-            {/* 1. Intro */}
             <motion.p
               variants={fadeUp}
               initial="hidden"
@@ -148,8 +165,7 @@ export default function Resume() {
               {t('intro')}
             </motion.p>
 
-            {/* 2. Skills */}
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-10">
               <motion.h3
                 variants={fadeUp}
                 initial="hidden"
@@ -160,26 +176,40 @@ export default function Resume() {
                 {t('skills')}
               </motion.h3>
 
-              {/* Skill rows stagger in */}
-              <motion.ul
-                variants={stagger(0.05, 0.12)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.3 }}
-                className="space-y-3 md:space-y-4"
-              >
-                {skills.map((skill) => (
-                  <motion.li
-                    key={skill}
-                    variants={slideLeft}
-                    className="flex items-center gap-4 md:gap-6"
+              {skillGroups.map((group) => (
+                <div key={group.category} className="space-y-4">
+                  {/* Category label */}
+                  <motion.p
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.5 }}
+                    className="text-xs uppercase tracking-[0.2em] opacity-40"
                   >
-                    <span className="w-28 text-sm font-medium">{skill}</span>
-                    {/* Dots animate independently via DotRow */}
-                    <DotRow total={5} filled={4} />
-                  </motion.li>
-                ))}
-              </motion.ul>
+                    {group.category}
+                  </motion.p>
+
+                  {/* Skill rows */}
+                  <motion.ul
+                    variants={stagger(0.05, 0.1)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="space-y-3"
+                  >
+                    {group.items.map((skill) => (
+                      <motion.li
+                        key={skill.name}
+                        variants={slideLeft}
+                        className="flex items-center gap-4 md:gap-6"
+                      >
+                        <span className="w-36 text-sm font-medium shrink-0">{skill.name}</span>
+                        <DotRow total={5} filled={skill.level} />
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </div>
+              ))}
             </div>
 
             <motion.hr
@@ -190,9 +220,7 @@ export default function Resume() {
               className="border-sepia-dark/20"
             />
 
-            {/* 3. Nested Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start">
-              {/* Left sub-column: Education & Languages */}
               <div className="space-y-12 md:space-y-16">
                 {/* Education */}
                 <section>
@@ -201,7 +229,7 @@ export default function Resume() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.5 }}
-                    className="text-sm md:text-xl font-bold uppercase tracking-widest mb-6 md:mb-8"
+                    className="text-sm md:text-base font-bold uppercase tracking-widest mb-6 md:mb-8"
                   >
                     {t('educationTitle')}
                   </motion.h3>
@@ -211,26 +239,22 @@ export default function Resume() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.2 }}
-                    className="space-y-5 md:space-y-6"
+                    className="space-y-6"
                   >
-                    <motion.div variants={slideLeft} className="group">
+                    <motion.div variants={slideLeft}>
                       <span className="text-sm uppercase tracking-widest opacity-50">2024</span>
-                      <h4 className="font-bold text-base md:text-lg leading-relaxed leading-tight">
-                        Web Development Bootcamp
+                      <h4 className="font-bold text-base md:text-lg leading-snug mt-0.5">
+                        Full-Stack Web Development Bootcamp
                       </h4>
-                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm opacity-80">
-                        WBS Coding School · Berlin
-                      </p>
+                      <p className="text-sm opacity-60 mt-0.5">WBS Coding School · Berlin</p>
                     </motion.div>
 
                     <motion.div variants={slideLeft}>
                       <span className="text-sm uppercase tracking-widest opacity-50">2007</span>
-                      <h4 className="font-bold text-base md:text-lg leading-relaxed leading-tight">
-                        Bachelor's Degree in Computer Software Engineering
+                      <h4 className="font-bold text-base md:text-lg leading-snug mt-0.5">
+                        B.Sc. Computer Software Engineering
                       </h4>
-                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm opacity-80">
-                        Khayyam University · Mashhad
-                      </p>
+                      <p className="text-sm opacity-60 mt-0.5">Khayyam University · Mashhad</p>
                     </motion.div>
                   </motion.div>
                 </section>
@@ -242,7 +266,7 @@ export default function Resume() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.5 }}
-                    className="text-sm md:text-xl font-bold uppercase tracking-widest mb-6 md:mb-8"
+                    className="text-sm md:text-base font-bold uppercase tracking-widest mb-6 md:mb-8"
                   >
                     {t('languages')}
                   </motion.h3>
@@ -258,11 +282,10 @@ export default function Resume() {
                       <motion.li key={lang.name} variants={fadeUp} className="space-y-2">
                         <div className="flex justify-between items-end max-w-40">
                           <span className="text-sm font-bold">{lang.name}</span>
-                          <span className="text-[11px] uppercase tracking-tighter opacity-50">
+                          <span className="text-[11px] uppercase tracking-tight opacity-50">
                             {lang.label}
                           </span>
                         </div>
-                        {/* Each language's dots fill in individually */}
                         <DotRow total={5} filled={lang.level} size="sm" />
                       </motion.li>
                     ))}
@@ -270,7 +293,6 @@ export default function Resume() {
                 </section>
               </div>
 
-              {/* Right sub-column: Experience & Download */}
               <div className="space-y-12 md:space-y-16">
                 {/* Experience */}
                 <section>
@@ -279,7 +301,7 @@ export default function Resume() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.5 }}
-                    className="text-sm md:text-xl font-bold uppercase tracking-widest mb-6 md:mb-8"
+                    className="text-sm md:text-base font-bold uppercase tracking-widest mb-6 md:mb-8"
                   >
                     {t('experienceTitle')}
                   </motion.h3>
@@ -292,59 +314,55 @@ export default function Resume() {
                     className="space-y-8 md:space-y-10"
                   >
                     {/* Calvergy */}
-                    <motion.div variants={slideLeft} className="space-y-2">
-                      <span className="text-sm uppercase tracking-widest opacity-50">
+                    <motion.div variants={slideLeft} className="space-y-1.5">
+                      <span className="text-xs uppercase tracking-widest opacity-50">
                         2025 – 2026
                       </span>
-                      <h4 className="font-bold text-base md:text-lg leading-relaxed uppercase">
+                      <h4 className="font-bold text-base md:text-lg uppercase leading-snug">
                         Frontend Developer (Intern)
                       </h4>
-                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-serif italic">
-                        Calvergy GmbH
-                      </p>
-                      <p className="text-sm leading-relaxed opacity-80">{t('expCalvergy')}</p>
+                      <p className="text-sm font-serif italic opacity-60">Calvergy GmbH</p>
+                      <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expCalvergy')}</p>
                     </motion.div>
 
                     {/* Naarvan */}
-                    <motion.div variants={slideLeft} className="space-y-2">
-                      <span className="text-sm uppercase tracking-widest opacity-50">
+                    <motion.div variants={slideLeft} className="space-y-1.5">
+                      <span className="text-xs uppercase tracking-widest opacity-50">
                         2020 – 2023
                       </span>
-                      <h4 className="font-bold text-base md:text-lg leading-relaxed uppercase">
+                      <h4 className="font-bold text-base md:text-lg uppercase leading-snug">
                         Web & CMS Developer
                       </h4>
-                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-serif italic">
+                      <p className="text-sm font-serif italic opacity-60">
                         Naarvan Meta-communication
                       </p>
-                      <p className="text-sm leading-relaxed opacity-80">{t('expNaarvan')}</p>
+                      <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expNaarvan')}</p>
                     </motion.div>
 
                     {/* Rahavard */}
-                    <motion.div variants={slideLeft} className="space-y-2">
-                      <span className="text-sm uppercase tracking-widest opacity-50">
+                    <motion.div variants={slideLeft} className="space-y-1.5">
+                      <span className="text-xs uppercase tracking-widest opacity-50">
                         2017 – 2022
                       </span>
-                      <h4 className="font-bold text-base md:text-lg leading-relaxed uppercase">
-                        Content Creator & Web Specialist
+                      <h4 className="font-bold text-base md:text-lg uppercase leading-snug">
+                        Content & Web Specialist
                       </h4>
-                      <p className="text-sm uppercase tracking-widest opacity-50 md:text-sm font-serif italic">
-                        Rahavard Digital
-                      </p>
-                      <p className="text-sm leading-relaxed opacity-80">{t('expRahavard')}</p>
+                      <p className="text-sm font-serif italic opacity-60">Rahavard Digital</p>
+                      <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expRahavard')}</p>
                     </motion.div>
                   </motion.div>
                 </section>
 
-                {/* Download CV */}
                 <motion.a
                   variants={popIn}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, amount: 0.8 }}
-                  href="/path-to-your-cv.pdf"
-                  className="inline-block w-full text-center py-2 md:py-3 border border-sepia-darkest text-sm opacity-50 md:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 ease-out hover:bg-sepia-darkest hover:text-sepia-lightest"
+                  href="/niloufar-asghari-cv.pdf"
+                  download
+                  className="inline-block w-full text-center py-2.5 md:py-3 border border-sepia-darkest text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 ease-out hover:bg-sepia-darkest hover:text-sepia-lightest"
                 >
-                  Download CV
+                  {t('download')}
                 </motion.a>
               </div>
             </div>
@@ -352,19 +370,19 @@ export default function Resume() {
         </div>
       </div>
 
-      {/* Decorative SVGs — animate on mount, no whileInView (absolute elements confuse the observer) */}
+      {/* Decorative SVGs */}
       <motion.div
         initial={{ opacity: 0, x: -20, y: 20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as const, delay: 0.3 }}
-        className="absolute bottom-2 md:bottom-5 left-2 md:left-5 z-10 hidden sm:block"
+        className="absolute bottom-2 md:bottom-5 left-2 md:left-5 z-10 hidden sm:block pointer-events-none"
       >
         <Image
           src="/parallax3.svg"
           alt=""
           width={200}
           height={200}
-          className="object-cover w-16 md:w-26 h-16 md:h-26 lg:w-48 lg:h-48"
+          className="object-contain w-16 md:w-26 h-16 md:h-26 lg:w-48 lg:h-48"
         />
       </motion.div>
 
@@ -372,14 +390,14 @@ export default function Resume() {
         initial={{ opacity: 0, x: 20, y: -20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as const, delay: 0.5 }}
-        className="absolute top-32 md:top-180 right-2 z-10 hidden sm:block"
+        className="absolute top-32 md:top-180 right-2 z-10 hidden sm:block pointer-events-none"
       >
         <Image
           src="/parallax4.svg"
           alt=""
           width={200}
           height={200}
-          className="object-cover w-16 md:w-32 h-16 md:h-32 lg:w-48 lg:h-48"
+          className="object-contain w-16 md:w-32 h-16 md:h-32 lg:w-48 lg:h-48"
         />
       </motion.div>
     </section>
