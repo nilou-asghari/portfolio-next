@@ -10,20 +10,23 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { motion } from 'framer-motion'
 
-// ─── Schema ──────────────────────────────────────────────────────────────────
+// ─── Schema ───────────────────────────────────────────────────────────────────
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.email('Invalid email address'),
+  email: z.string().email('Invalid email address'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 })
+
+type ContactFormData = z.infer<typeof contactSchema>
 
 // ─── Variants ────────────────────────────────────────────────────────────────
 
 const titleVariant = {
   hidden: { opacity: 0, y: 48 },
   show: {
-    opacity: 1, y: 0,
+    opacity: 1,
+    y: 0,
     transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
   },
 }
@@ -31,7 +34,8 @@ const titleVariant = {
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: {
-    opacity: 1, y: 0,
+    opacity: 1,
+    y: 0,
     transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
   },
 }
@@ -39,7 +43,8 @@ const fadeUp = {
 const slideLeft = {
   hidden: { opacity: 0, x: -20 },
   show: {
-    opacity: 1, x: 0,
+    opacity: 1,
+    x: 0,
     transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
   },
 }
@@ -47,7 +52,9 @@ const slideLeft = {
 const popIn = {
   hidden: { opacity: 0, scale: 0.9, y: 10 },
   show: {
-    opacity: 1, scale: 1, y: 0,
+    opacity: 1,
+    scale: 1,
+    y: 0,
     transition: { type: 'spring' as const, stiffness: 260, damping: 22 },
   },
 }
@@ -68,11 +75,11 @@ export default function Contact() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm({
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   })
 
-  const onSubmit = async (data: z.infer<typeof contactSchema>) => {
+  const onSubmit = async (data: ContactFormData) => {
     try {
       setLoading(true)
       const result = await sendEmail(data)
@@ -80,10 +87,10 @@ export default function Contact() {
         toast.success('Message sent successfully!')
         reset()
       } else {
-        toast.error('Something went wrong.')
+        toast.error('Something went wrong. Please try again.')
       }
     } catch {
-      toast.error('Failed to send message.')
+      toast.error('Failed to send message. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -94,7 +101,7 @@ export default function Contact() {
       id="contact"
       className="bg-sepia-light py-20 md:py-32 relative overflow-hidden text-sepia-darkest"
     >
-      {/* Decorative SVGs — mount-based to avoid absolute-position observer issues */}
+      {/* Decorative SVGs */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -114,7 +121,6 @@ export default function Contact() {
       </motion.div>
 
       <div className="mx-auto max-w-6xl md:max-w-7xl px-6 md:px-12 relative z-10">
-
         {/* Title */}
         <motion.h2
           variants={titleVariant}
@@ -127,38 +133,67 @@ export default function Contact() {
         </motion.h2>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-
-          {/* Left column — contact info staggered from left */}
+          {/* Left — contact info */}
           <motion.div
             variants={stagger(0.1, 0.15)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="md:col-span-1 border-b md:border-b-0 md:border-r border-sepia-dark p-4 md:p-6 space-y-4 md:space-y-5"
+            className="md:col-span-1 border-b md:border-b-0 md:border-r border-sepia-dark p-4 md:p-6 space-y-5"
           >
+            {/* Email */}
             <motion.div variants={slideLeft}>
-              <p className="text-sm uppercase tracking-widest font-medium opacity-50">
-                {t('phone')}
-              </p>
-              <p className="text-sm opacity-70">+49 1573 448 4519</p>
-            </motion.div>
-
-            <motion.div variants={slideLeft}>
-              <p className="text-sm uppercase tracking-widest font-medium opacity-50">
+              <p className="text-sm uppercase tracking-widest font-medium opacity-50 mb-1">
                 {t('email')}
               </p>
-              <p className="text-sm opacity-70">nilou.asghari@gmail.com</p>
+              <a
+                href="mailto:nilou.asghari@gmail.com"
+                className="text-sm opacity-70 hover:opacity-100 transition-opacity duration-200"
+              >
+                nilou.asghari@gmail.com
+              </a>
             </motion.div>
 
+            {/* Location */}
             <motion.div variants={slideLeft}>
-              <p className="text-sm uppercase tracking-widest font-medium opacity-50">
+              <p className="text-sm uppercase tracking-widest font-medium opacity-50 mb-1">
                 {t('location')}
               </p>
               <p className="text-sm opacity-70">Karlsruhe, Germany</p>
             </motion.div>
+
+            {/* LinkedIn */}
+            <motion.div variants={slideLeft}>
+              <p className="text-sm uppercase tracking-widest font-medium opacity-50 mb-1">
+                LinkedIn
+              </p>
+              <a
+                href="https://www.linkedin.com/in/niloufarasghari/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm opacity-70 hover:opacity-100 transition-opacity duration-200"
+              >
+                /in/niloufarasghari
+              </a>
+            </motion.div>
+
+            {/* GitHub */}
+            <motion.div variants={slideLeft}>
+              <p className="text-sm uppercase tracking-widest font-medium opacity-50 mb-1">
+                GitHub
+              </p>
+              <a
+                href="https://github.com/nilou-asghari"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm opacity-70 hover:opacity-100 transition-opacity duration-200"
+              >
+                /nilou-asghari
+              </a>
+            </motion.div>
           </motion.div>
 
-          {/* Form — fields stagger up one by one */}
+          {/* Form */}
           <motion.form
             variants={stagger(0.15, 0.12)}
             initial="hidden"
@@ -177,11 +212,9 @@ export default function Contact() {
                 type="text"
                 {...register('name')}
                 placeholder={t('name_placeholder')}
-                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-relaxed"
+                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-relaxed focus:outline-none focus:border-sepia-dark transition-colors duration-200"
               />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-              )}
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
             </motion.div>
 
             {/* Email */}
@@ -194,11 +227,9 @@ export default function Contact() {
                 type="email"
                 {...register('email')}
                 placeholder={t('email_placeholder')}
-                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-relaxed"
+                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-relaxed focus:outline-none focus:border-sepia-dark transition-colors duration-200"
               />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-              )}
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
             </motion.div>
 
             {/* Message */}
@@ -211,24 +242,23 @@ export default function Contact() {
                 rows={5}
                 {...register('message')}
                 placeholder={t('message_placeholder')}
-                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-relaxed"
+                className="w-full border border-sepia-dark/30 bg-transparent px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-relaxed focus:outline-none focus:border-sepia-dark transition-colors duration-200 resize-none"
               />
               {errors.message && (
                 <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
               )}
             </motion.div>
 
-            {/* Submit button — springs in last */}
+            {/* Submit */}
             <motion.div variants={popIn}>
               <button
                 type="submit"
                 disabled={loading}
-                className="border border-sepia-darkest px-6 py-3 text-sm font-medium hover:bg-sepia-darkest hover:text-sepia-lightest transition disabled:opacity-50"
+                className="border border-sepia-darkest px-6 py-3 text-sm font-medium transition-all duration-300 ease-out hover:bg-sepia-darkest hover:text-sepia-lightest disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                {loading ? 'Sending...' : 'Send Message'}
+                {loading ? 'Sending...' : t('submit')}
               </button>
             </motion.div>
-
           </motion.form>
         </div>
       </div>

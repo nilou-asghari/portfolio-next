@@ -6,7 +6,6 @@ import { motion } from 'framer-motion'
 
 // ─── Variants ────────────────────────────────────────────────────────────────
 
-/** Big title: dramatic slide from further down */
 const titleVariant = {
   hidden: { opacity: 0, y: 48 },
   show: {
@@ -16,7 +15,6 @@ const titleVariant = {
   },
 }
 
-/** Generic fade-up for text blocks */
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   show: {
@@ -26,7 +24,6 @@ const fadeUp = {
   },
 }
 
-/** CTA button springs in */
 const popIn = {
   hidden: { opacity: 0, scale: 0.9, y: 10 },
   show: {
@@ -37,7 +34,6 @@ const popIn = {
   },
 }
 
-/** Stats column: stagger each stat item */
 const statsContainer = {
   hidden: {},
   show: {
@@ -48,7 +44,6 @@ const statsContainer = {
   },
 }
 
-/** Each stat slides in from the left */
 const statItem = {
   hidden: { opacity: 0, x: -20 },
   show: {
@@ -58,7 +53,6 @@ const statItem = {
   },
 }
 
-/** Right column: stagger paragraphs + button */
 const rightContainer = {
   hidden: {},
   show: {
@@ -69,7 +63,6 @@ const rightContainer = {
   },
 }
 
-/** Decorative SVG drifts up slowly from below */
 const decorDrift = {
   hidden: { opacity: 0, y: 30 },
   show: {
@@ -89,7 +82,6 @@ export default function About() {
       id="about"
       className="bg-sepia-lightest py-20 md:py-32 relative overflow-hidden text-sepia-darkest"
     >
-      {/* Decorative image drifts in from below */}
       <motion.div
         variants={decorDrift}
         initial="hidden"
@@ -115,7 +107,6 @@ export default function About() {
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 md:justify-items-end">
-          {/* Left – Stats (staggered slide from left) */}
           <motion.div
             variants={statsContainer}
             initial="hidden"
@@ -149,7 +140,6 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          {/* Right – Description (staggered fade-up) */}
           <motion.div
             variants={rightContainer}
             initial="hidden"

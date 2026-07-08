@@ -7,27 +7,29 @@
   },
 
   "Hero": {
-    "intro": "Hi, I’m Niloufar",
+    "intro": "Hi, I'm Niloufar —",
     "frontend": "Frontend Developer",
-    "description": "I build modern, accessible, and scalable web applications using React, TypeScript, and Next.js.",
-    "ctaProjects": "View Projects",
-    "ctaContact": "Contact Me"
+    "description": "I build fast, accessible React interfaces that feel as good as they look. Based in Karlsruhe · Open to remote & hybrid roles.",
+    "ctaProjects": "See My Work",
+    "ctaContact": "Get in Touch"
   },
+
   "About": {
     "title": "About Me",
-    "bornLabel": "Born in",
-    "bornValue": "Iran",
+    "bornLabel": "Based in",
+    "bornValue": "Karlsruhe, DE",
     "experienceLabel": "Experience",
     "experienceValue": "5+ Years",
-    "birthLabel": "Date of Birth",
-    "birthValue": "September 1984",
-    "paragraph1": "I am a frontend developer with a strong focus on clean, accessible, and user-centered web interfaces. I enjoy translating complex requirements into clear and maintainable UI solutions.",
-    "paragraph2": "I have worked in both agency and modern frontend environments, collaborating closely with designers and developers to deliver responsive and scalable web applications.",
-    "cta": "Contact Me"
+    "birthLabel": "Availability",
+    "birthValue": "Immediately",
+    "paragraph1": "I'm a Frontend Developer with 5+ years of experience building performant, accessible web interfaces using React, TypeScript, and Next.js. I translate complex requirements into clean, maintainable UI architectures — and I care just as much about the code behind the screen as the experience in front of it.",
+    "paragraph2": "I've shipped production applications across agency, SaaS, and freelance environments — collaborating with designers, backend engineers, and stakeholders to deliver responsive, scalable products on time. I'm currently seeking frontend roles in Karlsruhe, Stuttgart, Mannheim, or fully remote.",
+    "cta": "Let's Talk"
   },
+
   "Resume": {
-    "title": "My Resume",
-    "intro": "Frontend developer with professional experience in UI-focused web development, combining modern frontend technologies with strong design sensibility.",
+    "title": "Resume",
+    "intro": "Frontend Developer with 5+ years of experience shipping production-ready interfaces across agency, SaaS, and freelance environments — specializing in React, TypeScript, and Next.js.",
     "skills": "Skills",
     "educationTitle": "Education",
     "education": "Education",
@@ -35,42 +37,46 @@
     "languages": "Languages",
     "download": "Download CV",
     "experienceTitle": "Experience",
-    "expCalvergy": "Worked on modern frontend interfaces using React, Next.js, TypeScript, and Tailwind CSS with a strong focus on UI/UX, responsiveness, and maintainable component architecture.",
-    "expNaarvan": "Developed and maintained CMS-based websites, customized frontend templates, and collaborated with design and content teams to ensure consistent cross-browser presentation.",
-    "expRahavard": "Created and managed digital content while supporting the design and structure of user-friendly web platforms with a strong focus on usability."
+    "expCalvergy": "Engineered and shipped the complete frontend of a live SaaS corporate platform using React, Next.js, TypeScript, and Tailwind CSS — delivering a responsive, multi-section site with a consistent design system that reduced content ambiguity and improved user comprehension of a complex product offering.",
+    "expNaarvan": "Built and maintained 10+ CMS-driven websites, customizing frontend templates and aligning closely with design and content teams to ensure consistent cross-browser presentation — standardizing component patterns that cut QA revision cycles across projects.",
+    "expRahavard": "Designed and structured user-facing digital platforms with a focus on usability and content hierarchy — contributing to stronger user engagement through intuitive layout decisions and accessible design practices."
   },
+
   "projects": {
-    "title": "Selected Projects",
-    "description": "A curated selection of frontend applications and web platforms built with React, TypeScript and modern web technologies.",
+    "title": "Selected Work",
+    "description": "Production-ready applications and platforms built with React, TypeScript, and Next.js — each solving a real problem with a clean, scalable frontend.",
 
     "project1": "Movie Board",
-    "project1_desc": "A full-stack movie application built with React, TypeScript and Next.js featuring authentication, API integration and a personalized watchlist.",
+    "project1_desc": "Engineered a full-stack movie discovery app with React 19, TypeScript, and JWT auth — featuring debounced TMDB API search and a persistent user watchlist, delivering a faster and cleaner experience than existing platforms.",
 
-    "project2": "Calvergy Website",
-    "project2_desc": "Corporate website redesign focused on responsive layout, component architecture and multilingual support using Next.js and Tailwind CSS.",
+    "project2": "Calvergy",
+    "project2_desc": "Shipped the complete frontend for a live SaaS corporate platform using Next.js and Tailwind CSS — translating complex product logic into a structured, responsive interface with English/German multilingual support.",
 
     "project3": "Petfect Match",
-    "project3_desc": "Responsive frontend website with modern UI patterns and clean layout structure, focused on accessibility and performance.",
+    "project3_desc": "Led frontend development in a cross-functional MERN team — architecting an intuitive pet adoption browsing experience with a clean component structure and responsive layout across all device sizes.",
 
     "project4": "Adler Reinigung",
-    "project4_desc": "Business website developed for a German client, emphasizing usability, clarity and mobile responsiveness."
+    "project4_desc": "Designed and deployed a conversion-focused business website for a German client — structuring content hierarchy and a mobile-first layout to drive service enquiries from local search traffic."
   },
+
   "contact": {
-    "title": "Contact Me",
+    "title": "Get in Touch",
     "phone": "Phone",
     "email": "Email",
     "location": "Location",
     "name": "Name",
-    "name_placeholder": "Enter your full name",
-    "email_placeholder": "Enter your email address",
+    "name_placeholder": "Your full name",
+    "email_placeholder": "Your email address",
     "message": "Message",
-    "message_placeholder": "Enter your message here",
-    "submit": "Submit"
+    "message_placeholder": "Tell me about your project or role",
+    "submit": "Send Message"
   },
+
   "footer": {
     "rights": "All Rights Reserved",
     "developed": "Developed by"
   },
+
   "project": {
     "year": "Year",
     "technology": "Technology",

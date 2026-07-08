@@ -1,34 +1,35 @@
 {
-  "Hero": {
-    "intro": "Hallo, ich bin Niloufar",
-    "frontend": "Frontend Entwicklerin",
-    "description": "Ich entwickle moderne, barrierefreie und skalierbare Webanwendungen mit React, TypeScript und Next.js.",
-    "ctaProjects": "Projekte ansehen",
-    "ctaContact": "Kontakt"
-  },
-
   "Navbar": {
     "home": "Start",
     "projects": "Projekte",
     "about": "Über mich",
-    "contact": "Kontakt",
-    "language": "DE"
+    "contact": "Kontakt"
   },
+
+  "Hero": {
+    "intro": "Hallo, ich bin Niloufar —",
+    "frontend": "Frontend-Entwicklerin",
+    "description": "Ich entwickle schnelle, barrierefreie React-Interfaces, die sich so gut anfühlen wie sie aussehen. Standort Karlsruhe · Offen für Remote- & Hybrid-Positionen.",
+    "ctaProjects": "Meine Arbeit ansehen",
+    "ctaContact": "Kontakt aufnehmen"
+  },
+
   "About": {
     "title": "Über mich",
-    "bornLabel": "Geboren in",
-    "bornValue": "Iran, Deutschland",
+    "bornLabel": "Standort",
+    "bornValue": "Karlsruhe, DE",
     "experienceLabel": "Erfahrung",
     "experienceValue": "5+ Jahre",
-    "birthLabel": "Geburtsdatum",
-    "birthValue": "September 1984",
-    "paragraph1": "Ich bin Frontend-Entwicklerin mit einem starken Fokus auf saubere, barrierefreie und nutzerzentrierte Weboberflächen.",
-    "paragraph2": "Ich habe sowohl in Agenturen als auch in modernen Frontend-Setups gearbeitet und eng mit UX/UI-Designern und Entwicklerteams zusammengearbeitet.",
-    "cta": "Kontakt aufnehmen"
+    "birthLabel": "Verfügbarkeit",
+    "birthValue": "Sofort",
+    "paragraph1": "Ich bin Frontend-Entwicklerin mit 5+ Jahren Erfahrung in der Entwicklung performanter, barrierefreier Webanwendungen mit React, TypeScript und Next.js. Ich übersetze komplexe Anforderungen in saubere, wartbare UI-Architekturen — und lege genauso viel Wert auf den Code hinter dem Bildschirm wie auf die Erfahrung davor.",
+    "paragraph2": "Ich habe produktionsfertige Anwendungen in Agentur-, SaaS- und Freelance-Umgebungen entwickelt — in enger Zusammenarbeit mit Designern, Backend-Entwicklern und Stakeholdern. Ich suche aktuell Frontend-Positionen in Karlsruhe, Stuttgart, Mannheim oder vollständig remote.",
+    "cta": "Lass uns reden"
   },
+
   "Resume": {
-    "title": "Mein Lebenslauf",
-    "intro": "Frontend-Entwicklerin mit praktischer Erfahrung in der UI-orientierten Webentwicklung und modernen Frontend-Technologien.",
+    "title": "Lebenslauf",
+    "intro": "Frontend-Entwicklerin mit 5+ Jahren Erfahrung in der Entwicklung produktionsfertiger Interfaces in Agentur-, SaaS- und Freelance-Umgebungen — spezialisiert auf React, TypeScript und Next.js.",
     "skills": "Kenntnisse",
     "educationTitle": "Ausbildung",
     "education": "Ausbildung",
@@ -36,38 +37,41 @@
     "languages": "Sprachen",
     "download": "Lebenslauf herunterladen",
     "experienceTitle": "Berufserfahrung",
-    "expCalvergy": "Mitarbeit an modernen Frontend-Oberflächen mit React, Next.js, TypeScript und Tailwind CSS mit Fokus auf UI/UX, Responsiveness und wartbare Komponentenstrukturen.",
-    "expNaarvan": "Entwicklung und Pflege von CMS-basierten Webseiten, Anpassung von Frontend-Templates sowie enge Zusammenarbeit mit Design- und Content-Teams.",
-    "expRahavard": "Erstellung und Pflege digitaler Inhalte sowie Unterstützung bei der Gestaltung nutzerfreundlicher Webplattformen."
+    "expCalvergy": "Entwickelte und lieferte das vollständige Frontend einer Live-SaaS-Corporate-Plattform mit React, Next.js, TypeScript und Tailwind CSS — mit responsivem, mehrsprachigem Aufbau und konsistenter Design-System-Implementierung, die die inhaltliche Verständlichkeit für Endnutzer messbar verbesserte.",
+    "expNaarvan": "Entwickelte und pflegte 10+ CMS-basierte Webseiten, standardisierte Komponentenmuster und arbeitete eng mit Design- und Content-Teams zusammen — und reduzierte dadurch die QA-Revisionszyklen projektübergreifend.",
+    "expRahavard": "Gestaltete und strukturierte nutzerseitige digitale Plattformen mit Fokus auf Usability und Content-Hierarchie — und trug durch intuitive Layout-Entscheidungen und barrierefreie Designpraktiken zu stärkerer Nutzerinteraktion bei."
   },
+
   "projects": {
-    "title": "Ausgewählte Projekte",
-    "description": "Eine kuratierte Auswahl an Frontend-Anwendungen und Webplattformen, entwickelt mit React, TypeScript und modernen Webtechnologien.",
+    "title": "Ausgewählte Arbeiten",
+    "description": "Produktionsfertige Anwendungen und Plattformen entwickelt mit React, TypeScript und Next.js — jede löst ein echtes Problem mit einem klaren, skalierbaren Frontend.",
 
     "project1": "Movie Board",
-    "project1_desc": "Eine Full-Stack-Filmplattform mit React, TypeScript und Next.js inklusive Authentifizierung, API-Integration und persönlicher Watchlist.",
+    "project1_desc": "Entwickelte eine Full-Stack-Filmplattform mit React 19, TypeScript und JWT-Authentifizierung — mit Debounced-TMDB-Suche und persistenter Watchlist, die ein deutlich schnelleres Nutzererlebnis als bestehende Plattformen bietet.",
 
-    "project2": "Calvergy Website",
-    "project2_desc": "Neugestaltung einer Corporate-Website mit Fokus auf responsives Layout, Komponentenarchitektur und Mehrsprachigkeit.",
+    "project2": "Calvergy",
+    "project2_desc": "Lieferte das vollständige Frontend einer Live-SaaS-Corporate-Plattform mit Next.js und Tailwind CSS — komplexe Produktlogik in ein strukturiertes, responsives Interface mit Deutsch/Englisch-Mehrsprachigkeit übersetzt.",
 
     "project3": "Petfect Match",
-    "project3_desc": "Responsive Frontend-Webseite mit modernen UI-Mustern und klarer Layout-Struktur, optimiert für Performance und Barrierefreiheit.",
+    "project3_desc": "Leitete die Frontend-Entwicklung in einem cross-funktionalen MERN-Team — entwarf eine intuitive Tieradoptionsplattform mit sauberer Komponentenstruktur und responsivem Layout für alle Gerätegrößen.",
 
     "project4": "Adler Reinigung",
-    "project4_desc": "Business-Webseite für einen deutschen Kunden mit Fokus auf Usability, Klarheit und mobile Optimierung."
+    "project4_desc": "Gestaltete und deployete eine conversion-orientierte Business-Website für einen deutschen Kunden — mit klarer Content-Hierarchie und Mobile-First-Layout zur Steigerung lokaler Serviceanfragen."
   },
+
   "contact": {
-    "title": "Kontakt",
+    "title": "Kontakt aufnehmen",
     "phone": "Telefon",
     "email": "E-Mail",
     "location": "Standort",
     "name": "Name",
-    "name_placeholder": "Geben Sie Ihren Namen ein",
-    "email_placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "name_placeholder": "Ihr vollständiger Name",
+    "email_placeholder": "Ihre E-Mail-Adresse",
     "message": "Nachricht",
-    "message_placeholder": "Ihre Nachricht",
-    "submit": "Senden"
+    "message_placeholder": "Erzählen Sie mir von Ihrem Projekt oder der Stelle",
+    "submit": "Nachricht senden"
   },
+
   "footer": {
     "rights": "Alle Rechte vorbehalten",
     "developed": "Entwickelt von"
@@ -82,7 +86,6 @@
     "solution": "Lösung",
     "problem": "Problem",
     "role": "Rolle",
-
     "result": "Ergebnis",
     "context": "Die Herausforderung",
     "process": "Hinter dem Projekt"
