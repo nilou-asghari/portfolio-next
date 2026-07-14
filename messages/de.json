@@ -29,7 +29,7 @@
 
   "Resume": {
     "title": "Lebenslauf",
-    "intro": "Frontend-Entwicklerin mit 5+ Jahren Erfahrung in der Entwicklung produktionsfertiger Interfaces in Agentur-, SaaS- und Freelance-Umgebungen — spezialisiert auf React, TypeScript und Next.js.",
+    "intro": "Frontend-Entwicklerin mit Abschluss in Software Engineering und 5+ Jahren Erfahrung in der Entwicklung responsiver, barrierefreier Webanwendungen mit React, TypeScript und Next.js. Erfahren im gesamten Stack mit Node.js, Express und REST APIs. Zertifiziert in Berufsdeutsch (telc B2) und auf der Suche nach einer Frontend-Position in einem kollaborativen, produktorientierten Team.",
     "skills": "Kenntnisse",
     "educationTitle": "Ausbildung",
     "education": "Ausbildung",
@@ -37,9 +37,10 @@
     "languages": "Sprachen",
     "download": "Lebenslauf herunterladen",
     "experienceTitle": "Berufserfahrung",
-    "expCalvergy": "Entwickelte und lieferte das vollständige Frontend einer Live-SaaS-Corporate-Plattform mit React, Next.js, TypeScript und Tailwind CSS — mit responsivem, mehrsprachigem Aufbau und konsistenter Design-System-Implementierung, die die inhaltliche Verständlichkeit für Endnutzer messbar verbesserte.",
-    "expNaarvan": "Entwickelte und pflegte 10+ CMS-basierte Webseiten, standardisierte Komponentenmuster und arbeitete eng mit Design- und Content-Teams zusammen — und reduzierte dadurch die QA-Revisionszyklen projektübergreifend.",
-    "expRahavard": "Gestaltete und strukturierte nutzerseitige digitale Plattformen mit Fokus auf Usability und Content-Hierarchie — und trug durch intuitive Layout-Entscheidungen und barrierefreie Designpraktiken zu stärkerer Nutzerinteraktion bei."
+    "expCalvergy": "Kernsektionen einer Live-SaaS-Plattform (Hero, Advantages, How It Works) in React, Next.js und TypeScript neu entwickelt — mit Deutsch/Englisch-Lokalisierung und responsivem, konsistentem UI über alle Breakpoints. Erhielt eine schriftliche Referenz mit der Bewertung 'sehr gut' für Zuverlässigkeit und Codequalität.",
+    "expFreelance": "Produktionswebsites für zahlende Kunden entworfen und umgesetzt, darunter Adler Reinigung (React) und eine WordPress-Festivalseite. CineBoard entwickelt — eine Full-Stack-Filmanwendung (React 19, TypeScript, Node.js/Express, MongoDB) mit JWT-Authentifizierung und einem eigenen Debounce-Hook, der redundante TMDB-API-Aufrufe eliminierte.",
+    "expNaarvan": "Jährliche Wartungskosten für Kunden um bis zu 35 % gesenkt durch Entwicklung und Pflege von drei internen Plattformen in React, TypeScript und SCSS. Drupal CMS mit Twig-Templating integriert und die Teamlieferung durch Code-Reviews und Pair-Programming im Agile-Umfeld beschleunigt.",
+    "expRahavard": "Organischen Traffic um 40 % gesteigert durch SEO-optimierte Webinhalte und enge Zusammenarbeit mit Designern an barrierefreien, responsiven Landing Pages — mit intuitivem Layout für stärkere Nutzerinteraktion."
   },
 
   "projects": {
@@ -47,7 +48,7 @@
     "description": "Produktionsfertige Anwendungen und Plattformen entwickelt mit React, TypeScript und Next.js — jede löst ein echtes Problem mit einem klaren, skalierbaren Frontend.",
 
     "project1": "Movie Board",
-    "project1_desc": "Entwickelte eine Full-Stack-Filmplattform mit React 19, TypeScript und JWT-Authentifizierung — mit Debounced-TMDB-Suche und persistenter Watchlist, die ein deutlich schnelleres Nutzererlebnis als bestehende Plattformen bietet.",
+    "project1_desc": "Entwickelte eine Full-Stack-Filmplattform mit React 19, TypeScript und JWT-Authentifizierung — mit einem eigenen Debounce-Hook, der redundante TMDB-API-Anfragen eliminierte und ein deutlich schnelleres Nutzererlebnis lieferte.",
 
     "project2": "Calvergy",
     "project2_desc": "Lieferte das vollständige Frontend einer Live-SaaS-Corporate-Plattform mit Next.js und Tailwind CSS — komplexe Produktlogik in ein strukturiertes, responsives Interface mit Deutsch/Englisch-Mehrsprachigkeit übersetzt.",
