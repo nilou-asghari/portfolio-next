@@ -99,7 +99,6 @@ function DotRow({
 export default function Resume() {
   const t = useTranslations('Resume')
 
-  // ── Skill groups — varied ratings ──────────────────────────────
   // 5 = expert / daily use   4 = proficient   3 = comfortable   2 = familiar
   const skillGroups: SkillGroup[] = [
     {
@@ -109,6 +108,7 @@ export default function Resume() {
         { name: 'React', level: 4 },
         { name: 'Next.js', level: 4 },
         { name: 'TypeScript', level: 3 },
+        { name: 'Redux', level: 3 },
       ],
     },
     {
@@ -116,6 +116,7 @@ export default function Resume() {
       items: [
         { name: 'CSS / SCSS', level: 5 },
         { name: 'Tailwind CSS', level: 4 },
+        { name: 'Bootstrap', level: 4 },
         { name: 'Responsive Design', level: 5 },
       ],
     },
@@ -127,7 +128,8 @@ export default function Resume() {
         { name: 'REST APIs', level: 3 },
         { name: 'Node.js / Express', level: 3 },
         { name: 'MongoDB', level: 2 },
-        { name: 'Drupal / CMS', level: 5 },
+        { name: 'Drupal / WordPress', level: 5 },
+        { name: 'Jest', level: 2 },
       ],
     },
   ]
@@ -141,6 +143,7 @@ export default function Resume() {
   return (
     <section id="resume" className="bg-sepia-light py-20 md:py-32 relative text-sepia-darkest">
       <div className="mx-auto max-w-4xl px-4 md:px-6">
+        {/* Title */}
         <motion.h2
           variants={titleVariant}
           initial="hidden"
@@ -151,10 +154,14 @@ export default function Resume() {
           {t('title')}
         </motion.h2>
 
+        {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
+          {/* Left border column */}
           <div className="md:col-span-1 border-b md:border-b-0 md:border-r border-sepia-dark mb-6 md:mb-0 md:h-full" />
 
+          {/* Right column */}
           <div className="md:col-span-2 space-y-12 md:space-y-20">
+            {/* 1. Intro */}
             <motion.p
               variants={fadeUp}
               initial="hidden"
@@ -165,6 +172,7 @@ export default function Resume() {
               {t('intro')}
             </motion.p>
 
+            {/* 2. Skills */}
             <div className="space-y-10">
               <motion.h3
                 variants={fadeUp}
@@ -178,7 +186,6 @@ export default function Resume() {
 
               {skillGroups.map((group) => (
                 <div key={group.category} className="space-y-4">
-                  {/* Category label */}
                   <motion.p
                     variants={fadeUp}
                     initial="hidden"
@@ -189,7 +196,6 @@ export default function Resume() {
                     {group.category}
                   </motion.p>
 
-                  {/* Skill rows */}
                   <motion.ul
                     variants={stagger(0.05, 0.1)}
                     initial="hidden"
@@ -220,7 +226,9 @@ export default function Resume() {
               className="border-sepia-dark/20"
             />
 
+            {/* 3. Nested Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start">
+              {/* ── Left sub-column ── */}
               <div className="space-y-12 md:space-y-16">
                 {/* Education */}
                 <section>
@@ -244,15 +252,18 @@ export default function Resume() {
                     <motion.div variants={slideLeft}>
                       <span className="text-sm uppercase tracking-widest opacity-50">2024</span>
                       <h4 className="font-bold text-base md:text-lg leading-snug mt-0.5">
-                        Full-Stack Web Development Bootcamp
+                        Full-Stack Web Development Certificate
                       </h4>
                       <p className="text-sm opacity-60 mt-0.5">WBS Coding School · Berlin</p>
+                      <p className="text-xs opacity-50 mt-1">
+                        680-hour intensive · React, Node.js, REST, SQL/NoSQL
+                      </p>
                     </motion.div>
 
                     <motion.div variants={slideLeft}>
                       <span className="text-sm uppercase tracking-widest opacity-50">2007</span>
                       <h4 className="font-bold text-base md:text-lg leading-snug mt-0.5">
-                        B.Sc. Computer Software Engineering
+                        B.Eng. Computer Software Engineering
                       </h4>
                       <p className="text-sm opacity-60 mt-0.5">Khayyam University · Mashhad</p>
                     </motion.div>
@@ -291,8 +302,43 @@ export default function Resume() {
                     ))}
                   </motion.ul>
                 </section>
-              </div>
 
+                {/* Certifications */}
+                <section>
+                  <motion.h3
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.5 }}
+                    className="text-sm md:text-base font-bold uppercase tracking-widest mb-6 md:mb-8"
+                  >
+                    Certifications
+                  </motion.h3>
+
+                  <motion.div
+                    variants={stagger(0, 0.15)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="space-y-4"
+                  >
+                    <motion.div variants={slideLeft} className="space-y-0.5">
+                      <p className="text-sm font-bold leading-snug">
+                        telc Deutsch-Test für den Beruf
+                      </p>
+                      <p className="text-sm opacity-60">B2 Professional · 2023</p>
+                    </motion.div>
+
+                    <motion.div variants={slideLeft} className="space-y-0.5">
+                      <p className="text-sm font-bold leading-snug">Google UX Design</p>
+                      <p className="text-sm opacity-60">Foundations & UX Process</p>
+                    </motion.div>
+                  </motion.div>
+                </section>
+              </div>
+              {/* ── end left sub-column ── */}
+
+              {/* ── Right sub-column ── */}
               <div className="space-y-12 md:space-y-16">
                 {/* Experience */}
                 <section>
@@ -316,13 +362,29 @@ export default function Resume() {
                     {/* Calvergy */}
                     <motion.div variants={slideLeft} className="space-y-1.5">
                       <span className="text-xs uppercase tracking-widest opacity-50">
-                        2025 – 2026
+                        Oct 2025 – Jan 2026
                       </span>
                       <h4 className="font-bold text-base md:text-lg uppercase leading-snug">
                         Frontend Developer (Intern)
                       </h4>
-                      <p className="text-sm font-serif italic opacity-60">Calvergy GmbH</p>
+                      <p className="text-sm font-serif italic opacity-60">
+                        Calvergy · Aachen (Remote)
+                      </p>
                       <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expCalvergy')}</p>
+                    </motion.div>
+
+                    {/* Freelance */}
+                    <motion.div variants={slideLeft} className="space-y-1.5">
+                      <span className="text-xs uppercase tracking-widest opacity-50">
+                        2024 – 2025
+                      </span>
+                      <h4 className="font-bold text-base md:text-lg uppercase leading-snug">
+                        Freelance Frontend Developer
+                      </h4>
+                      <p className="text-sm font-serif italic opacity-60">
+                        Self-employed · Karlsruhe
+                      </p>
+                      <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expFreelance')}</p>
                     </motion.div>
 
                     {/* Naarvan */}
@@ -331,10 +393,10 @@ export default function Resume() {
                         2020 – 2023
                       </span>
                       <h4 className="font-bold text-base md:text-lg uppercase leading-snug">
-                        Web & CMS Developer
+                        Frontend Web Developer
                       </h4>
                       <p className="text-sm font-serif italic opacity-60">
-                        Naarvan Meta-communication
+                        Naarvan Meta Communications · Kerman
                       </p>
                       <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expNaarvan')}</p>
                     </motion.div>
@@ -342,17 +404,20 @@ export default function Resume() {
                     {/* Rahavard */}
                     <motion.div variants={slideLeft} className="space-y-1.5">
                       <span className="text-xs uppercase tracking-widest opacity-50">
-                        2017 – 2022
+                        2016 – 2020
                       </span>
                       <h4 className="font-bold text-base md:text-lg uppercase leading-snug">
-                        Content & Web Specialist
+                        Content Creator & Web Specialist
                       </h4>
-                      <p className="text-sm font-serif italic opacity-60">Rahavard Digital</p>
+                      <p className="text-sm font-serif italic opacity-60">
+                        Rahavard Digital · Kerman
+                      </p>
                       <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expRahavard')}</p>
                     </motion.div>
                   </motion.div>
                 </section>
 
+                {/* Download CV */}
                 <motion.a
                   variants={popIn}
                   initial="hidden"
@@ -365,9 +430,13 @@ export default function Resume() {
                   {t('download')}
                 </motion.a>
               </div>
+              {/* ── end right sub-column ── */}
             </div>
+            {/* ── end nested grid ── */}
           </div>
+          {/* ── end right column ── */}
         </div>
+        {/* ── end main grid ── */}
       </div>
 
       {/* Decorative SVGs */}

@@ -1,28 +1,28 @@
 export const projects = [
   {
     slug: 'cine-board',
-    title: 'cine Board',
+    title: 'CineBoard',
     year: '2025',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
-    categories: ['Web App'],
-    image: '/movie.jpg',
+    technologies: ['React 19', 'TypeScript', 'Node.js', 'Express', 'MongoDB'],
+    categories: ['Full-Stack App'],
+    image: '/movie.png',
     live: 'https://cineboard-app.netlify.app/',
 
     context:
-      "Movie discovery is broken. Most platforms overwhelm users with cluttered interfaces and slow, imprecise search — making it hard to find something worth watching. Movie Board was built to solve exactly that: a clean, fast discovery experience powered by the TMDB API, where users can search titles, explore what's trending, and build a personal watchlist — all in one place.",
+      "Movie discovery is broken. Most platforms overwhelm users with cluttered interfaces and slow, imprecise search — making it hard to find something worth watching. CineBoard was built to solve exactly that: a clean, fast discovery experience powered by the TMDB API, where users can search titles, explore what's trending, and build a personal favourites collection — all in one place.",
 
     solution: [
-      'The application was built with a scalable architecture using Next.js and TypeScript to ensure long-term maintainability and strong type safety. Real-time movie data flows in through the TMDB API, while debounced search keeps the experience smooth without hammering the endpoint on every keystroke.',
-      'User-specific features like watchlists were built around clean global state management, keeping the UI predictable and fast. Tailwind CSS handled the visual layer — responsive, minimal, and consistent across screen sizes.',
+      'The application was built with a full-stack MERN architecture — React 19 and TypeScript on the frontend, Node.js and Express on the backend, and MongoDB for persistence. Real-time movie data flows in through the TMDB API, while a custom debounced-search hook keeps the experience smooth without hammering the endpoint on every keystroke.',
+      'User accounts are secured with JWT authentication, and a saveable favourites collection is persisted per user. The interface stays responsive and minimal, keeping the focus on the content across every screen size.',
     ],
 
     process:
-      "As the sole Frontend Developer, I owned the full UI architecture and API integration from start to finish. The steepest challenges were working within TMDB's rate limits without degrading the experience, implementing debounced search that felt instant to the user, and designing a state structure that could support user-specific features cleanly without prop drilling or unnecessary complexity.",
+      "As the sole developer, I owned the full stack from API integration to authentication. The steepest challenges were working within TMDB's rate limits without degrading the experience, engineering a custom useDebounce hook that eliminated redundant API calls on every keystroke, and designing a clean auth flow with JWT that kept user data secure and the UI predictable.",
 
     result:
-      'Movie Board delivers a fast, focused discovery experience that feels noticeably lighter than existing platforms. Search is instant, the watchlist is persistent, and the interface stays out of the way — letting the content speak for itself.',
+      'CineBoard delivers a fast, focused discovery experience that feels noticeably lighter than existing platforms. Search is instant, favourites persist across sessions, and the JWT-secured accounts keep each user’s collection their own.',
 
-    gallery: ['/movie1.jpg', '/movie2.jpg', '/movie3.jpg'],
+    gallery: ['/movie1.png', '/movie2.png', '/movie3.png'],
     next: 'petfect-match',
   },
 
@@ -30,8 +30,8 @@ export const projects = [
     slug: 'petfect-match',
     title: 'Petfect Match',
     year: '2024',
-    technologies: ['React', 'MongoDB', 'Express', 'Node.js'],
-    categories: ['Frontend Application'],
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+    categories: ['Full-Stack App'],
     image: '/petfect.png',
     live: 'https://petfectmatch.netlify.app/',
 
@@ -57,7 +57,7 @@ export const projects = [
     slug: 'calvergy',
     title: 'Calvergy',
     year: '2025',
-    technologies: ['React', 'Next.js', 'Tailwind'],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
     categories: ['Corporate SaaS Platform'],
     image: '/calvergy.png',
     live: 'https://calvergy.com/en',
@@ -71,7 +71,7 @@ export const projects = [
     ],
 
     process:
-      "Working as the Frontend Developer on this live product, I was responsible for UI implementation and experience refinement throughout. The hardest part wasn't technical — it was editorial: deciding how to present complex business logic without oversimplifying it, and maintaining visual consistency across a site with many distinct sections and content types.",
+      "Working as the Frontend Developer on this live product, I was responsible for UI implementation and experience refinement throughout. I also implemented English/German localization across the site. The hardest part wasn't technical — it was editorial: deciding how to present complex business logic without oversimplifying it, and maintaining visual consistency across a site with many distinct sections and content types.",
 
     result:
       'Calvergy launched with a polished, professional interface that gives the product the presentation it deserves. Visitors can understand the offering quickly, the brand feels credible, and the structure holds up as the product continues to evolve.',
@@ -104,6 +104,6 @@ export const projects = [
       'Adler Reinigung now has a digital presence that works as hard as the business does. The site is fast, clear, and built to convert — giving the company a credible foundation to grow its customer base online.',
 
     gallery: ['/adler1.jpg', '/adler2.jpg', '/adler3.jpg'],
-    next: 'movie-board',
+    next: 'cine-board',
   },
 ]

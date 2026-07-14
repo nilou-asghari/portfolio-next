@@ -29,7 +29,7 @@
 
   "Resume": {
     "title": "Resume",
-    "intro": "Frontend Developer with 5+ years of experience shipping production-ready interfaces across agency, SaaS, and freelance environments — specializing in React, TypeScript, and Next.js.",
+    "intro": "Frontend Developer with a Computer Software Engineering degree and 5+ years of experience building responsive, accessible web applications with React, TypeScript, and Next.js. Experienced across the full stack with Node.js, Express, and REST APIs. Certified in professional German (telc B2) and seeking a frontend role in a collaborative, product-focused team.",
     "skills": "Skills",
     "educationTitle": "Education",
     "education": "Education",
@@ -37,9 +37,10 @@
     "languages": "Languages",
     "download": "Download CV",
     "experienceTitle": "Experience",
-    "expCalvergy": "Engineered and shipped the complete frontend of a live SaaS corporate platform using React, Next.js, TypeScript, and Tailwind CSS — delivering a responsive, multi-section site with a consistent design system that reduced content ambiguity and improved user comprehension of a complex product offering.",
-    "expNaarvan": "Built and maintained 10+ CMS-driven websites, customizing frontend templates and aligning closely with design and content teams to ensure consistent cross-browser presentation — standardizing component patterns that cut QA revision cycles across projects.",
-    "expRahavard": "Designed and structured user-facing digital platforms with a focus on usability and content hierarchy — contributing to stronger user engagement through intuitive layout decisions and accessible design practices."
+    "expCalvergy": "Rebuilt core sections of a live SaaS platform (Hero, Advantages, How It Works) in React, Next.js, and TypeScript — implementing English/German localization and delivering responsive, consistent UI across all breakpoints. Earned a 'sehr gut' (very good) written reference for reliability and code quality.",
+    "expFreelance": "Designed and shipped production websites for paying clients, including Adler Reinigung (React) and a WordPress festival site. Built CineBoard, a full-stack movie app (React 19, TypeScript, Node.js/Express, MongoDB) with JWT auth and a custom debounced-search hook that eliminated redundant TMDB API calls.",
+    "expNaarvan": "Reduced annual client maintenance costs by up to 35% by developing and maintaining three internal platforms in React, TypeScript, and SCSS. Integrated Drupal CMS using Twig templating and accelerated team delivery through code reviews and pair-programming in an Agile environment.",
+    "expRahavard": "Increased organic traffic by 40% by producing SEO-optimized web content and collaborating with designers on accessible, responsive landing pages — contributing to stronger user engagement through intuitive layout decisions."
   },
 
   "projects": {
@@ -47,7 +48,7 @@
     "description": "Production-ready applications and platforms built with React, TypeScript, and Next.js — each solving a real problem with a clean, scalable frontend.",
 
     "project1": "Movie Board",
-    "project1_desc": "Engineered a full-stack movie discovery app with React 19, TypeScript, and JWT auth — featuring debounced TMDB API search and a persistent user watchlist, delivering a faster and cleaner experience than existing platforms.",
+    "project1_desc": "Engineered a full-stack movie discovery app with React 19, TypeScript, and JWT auth — featuring a custom debounced search hook that eliminated redundant TMDB API requests and delivered a faster, cleaner experience than existing platforms.",
 
     "project2": "Calvergy",
     "project2_desc": "Shipped the complete frontend for a live SaaS corporate platform using Next.js and Tailwind CSS — translating complex product logic into a structured, responsive interface with English/German multilingual support.",
