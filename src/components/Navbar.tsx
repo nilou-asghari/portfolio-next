@@ -1,10 +1,12 @@
 'use client'
 
+import NextLink from 'next/link'
 import { Link, usePathname } from '@/i18n/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+// ─── Shared nav link style ─────────────────────────────────────────────────
 const navLinkClass = `
   relative transition-all duration-300 ease-out hover:opacity-70
   after:absolute after:left-0 after:-bottom-2.5
@@ -12,6 +14,7 @@ const navLinkClass = `
   after:transition-all after:duration-300 hover:after:w-full
 `.trim()
 
+// ─── Mobile menu animation ────────────────────────────────────────────────
 const mobileMenuVariants = {
   hidden: { opacity: 0, height: 0 },
   show: {
@@ -26,6 +29,8 @@ const mobileMenuVariants = {
   },
 }
 
+// ─── Component ─────────────────────────────────────────────────────────────
+
 export default function Navbar() {
   const locale = useLocale()
   const t = useTranslations('Navbar')
@@ -35,29 +40,34 @@ export default function Navbar() {
 
   const close = () => setIsOpen(false)
 
+  const homeHref = `/${locale}#hero`
+  const projectsHref = `/${locale}#projects`
+  const aboutHref = `/${locale}#about`
+  const contactHref = `/${locale}#contact`
+
   return (
     <header className="sticky top-0 z-50 border-b border-sepia-dark/10 bg-sepia-light/80 backdrop-blur-md supports-backdrop-filter:bg-sepia-light/70">
       <nav className="mx-auto text-sepia-darkest flex max-w-6xl items-center justify-between px-6 md:px-12 py-3 md:py-4">
-        <a
-          href="#hero"
+        <NextLink
+          href={homeHref}
           className="text-xl md:text-2xl font-semibold tracking-wide transition-opacity duration-300 hover:opacity-70"
         >
           Niloufar
-        </a>
+        </NextLink>
 
         <div className="hidden md:flex items-center gap-6 text-sm md:text-base font-medium">
-          <a href="#hero" className={navLinkClass}>
+          <NextLink href={homeHref} className={navLinkClass}>
             {t('home')}
-          </a>
-          <a href="#projects" className={navLinkClass}>
+          </NextLink>
+          <NextLink href={projectsHref} className={navLinkClass}>
             {t('projects')}
-          </a>
-          <a href="#about" className={navLinkClass}>
+          </NextLink>
+          <NextLink href={aboutHref} className={navLinkClass}>
             {t('about')}
-          </a>
-          <a href="#contact" className={navLinkClass}>
+          </NextLink>
+          <NextLink href={contactHref} className={navLinkClass}>
             {t('contact')}
-          </a>
+          </NextLink>
         </div>
 
         <Link
@@ -113,18 +123,18 @@ export default function Navbar() {
             className="md:hidden overflow-hidden bg-sepia-light border-t border-sepia-dark/10"
           >
             <div className="px-6 py-5 flex flex-col gap-5 text-sm font-medium">
-              <a href="#hero" onClick={close}>
+              <NextLink href={homeHref} onClick={close}>
                 {t('home')}
-              </a>
-              <a href="#projects" onClick={close}>
+              </NextLink>
+              <NextLink href={projectsHref} onClick={close}>
                 {t('projects')}
-              </a>
-              <a href="#about" onClick={close}>
+              </NextLink>
+              <NextLink href={aboutHref} onClick={close}>
                 {t('about')}
-              </a>
-              <a href="#contact" onClick={close}>
+              </NextLink>
+              <NextLink href={contactHref} onClick={close}>
                 {t('contact')}
-              </a>
+              </NextLink>
 
               <div className="border-t border-sepia-dark/10 pt-4">
                 <Link
