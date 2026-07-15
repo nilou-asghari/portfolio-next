@@ -1,17 +1,15 @@
 import { projects } from '@/data/projects'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ProjectPageClient from './ProjectPageClient'
 
-// ─── Static params — pre-renders every project at build time ─────────────────
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }))
 }
 
-// ─── SEO metadata per project ─────────────────────────────────────────────────
 export async function generateMetadata({
   params,
 }: {
@@ -49,11 +47,13 @@ export default async function ProjectPage({
   params: Promise<{ slug: string; locale: string }>
 }) {
   const { slug, locale } = await params
+
+  setRequestLocale(locale)
+
   const t = await getTranslations('project')
 
   const project = projects.find((p) => p.slug === slug)
 
-  // Use Next.js notFound() for proper 404 handling
   if (!project) notFound()
 
   const nextProject = projects.find((p) => p.slug === project.next) ?? null

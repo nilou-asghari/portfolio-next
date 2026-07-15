@@ -5,7 +5,6 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// ─── Shared nav link style — extracted from 4 copy-pasted identical strings ──
 const navLinkClass = `
   relative transition-all duration-300 ease-out hover:opacity-70
   after:absolute after:left-0 after:-bottom-2.5
@@ -13,7 +12,6 @@ const navLinkClass = `
   after:transition-all after:duration-300 hover:after:w-full
 `.trim()
 
-// ─── Mobile menu animation ────────────────────────────────────────────────────
 const mobileMenuVariants = {
   hidden: { opacity: 0, height: 0 },
   show: {
@@ -27,8 +25,6 @@ const mobileMenuVariants = {
     transition: { duration: 0.2, ease: [0.22, 1, 0.36, 1] as const },
   },
 }
-
-// ─── Component ───────────────────────────────────────────────────────────────
 
 export default function Navbar() {
   const locale = useLocale()
@@ -54,15 +50,15 @@ export default function Navbar() {
           <Link href="/" locale={locale} className={navLinkClass}>
             {t('home')}
           </Link>
-          <Link href="/#projects" locale={locale} className={navLinkClass}>
+          <a href="#projects" className={navLinkClass}>
             {t('projects')}
-          </Link>
-          <Link href="/#about" locale={locale} className={navLinkClass}>
+          </a>
+          <a href="#about" className={navLinkClass}>
             {t('about')}
-          </Link>
-          <Link href="/#contact" locale={locale} className={navLinkClass}>
+          </a>
+          <a href="#contact" className={navLinkClass}>
             {t('contact')}
-          </Link>
+          </a>
         </div>
 
         <Link
@@ -73,6 +69,7 @@ export default function Navbar() {
           {nextLocale.toUpperCase()}
         </Link>
 
+        {/* Mobile: language + hamburger */}
         <div className="md:hidden flex items-center gap-4">
           <Link
             href={pathname}
@@ -107,6 +104,7 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -121,15 +119,15 @@ export default function Navbar() {
               <Link href="/" locale={locale} onClick={close}>
                 {t('home')}
               </Link>
-              <Link href="/#projects" locale={locale} onClick={close}>
+              <a href="#projects" onClick={close}>
                 {t('projects')}
-              </Link>
-              <Link href="/#about" locale={locale} onClick={close}>
+              </a>
+              <a href="#about" onClick={close}>
                 {t('about')}
-              </Link>
-              <Link href="/#contact" locale={locale} onClick={close}>
+              </a>
+              <a href="#contact" onClick={close}>
                 {t('contact')}
-              </Link>
+              </a>
 
               <div className="border-t border-sepia-dark/10 pt-4">
                 <Link

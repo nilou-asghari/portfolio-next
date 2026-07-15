@@ -1,14 +1,13 @@
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { Toaster } from 'react-hot-toast'
 import type { Metadata } from 'next'
 
-// ─── Metadata ─────────────────────────────────────────────────────────────────
-
 export const metadata: Metadata = {
+  metadataBase: new URL('https://niloufar-asghari.netlify.app'),
   title: 'Niloufar Asghari — Frontend Developer',
   description:
     'Frontend Developer based in Karlsruhe specializing in React, TypeScript, and Next.js. Open to remote and hybrid roles.',
@@ -19,8 +18,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 }
-
-// ─── Layout ───────────────────────────────────────────────────────────────────
 
 type Props = {
   children: React.ReactNode
@@ -34,11 +31,11 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound()
   }
 
+  setRequestLocale(locale)
+
   const messages = await getMessages()
 
   return (
-    // lang={locale} tells browsers and screen readers which language this page is in
-    // — critical for accessibility and SEO
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
