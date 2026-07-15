@@ -4,8 +4,6 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-// ─── Variants ────────────────────────────────────────────────────────────────
-
 const titleVariant = {
   hidden: { opacity: 0, y: 48 },
   show: {
@@ -71,8 +69,6 @@ const decorDrift = {
     transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] as const },
   },
 }
-
-// ─── Component ───────────────────────────────────────────────────────────────
 
 export default function About() {
   const t = useTranslations('About')

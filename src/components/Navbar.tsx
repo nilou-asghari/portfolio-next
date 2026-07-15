@@ -38,18 +38,17 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-sepia-dark/10 bg-sepia-light/80 backdrop-blur-md supports-backdrop-filter:bg-sepia-light/70">
       <nav className="mx-auto text-sepia-darkest flex max-w-6xl items-center justify-between px-6 md:px-12 py-3 md:py-4">
-        <Link
-          href="/"
-          locale={locale}
+        <a
+          href="#hero"
           className="text-xl md:text-2xl font-semibold tracking-wide transition-opacity duration-300 hover:opacity-70"
         >
           Niloufar
-        </Link>
+        </a>
 
         <div className="hidden md:flex items-center gap-6 text-sm md:text-base font-medium">
-          <Link href="/" locale={locale} className={navLinkClass}>
+          <a href="#hero" className={navLinkClass}>
             {t('home')}
-          </Link>
+          </a>
           <a href="#projects" className={navLinkClass}>
             {t('projects')}
           </a>
@@ -69,7 +68,6 @@ export default function Navbar() {
           {nextLocale.toUpperCase()}
         </Link>
 
-        {/* Mobile: language + hamburger */}
         <div className="md:hidden flex items-center gap-4">
           <Link
             href={pathname}
@@ -104,7 +102,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -116,9 +113,9 @@ export default function Navbar() {
             className="md:hidden overflow-hidden bg-sepia-light border-t border-sepia-dark/10"
           >
             <div className="px-6 py-5 flex flex-col gap-5 text-sm font-medium">
-              <Link href="/" locale={locale} onClick={close}>
+              <a href="#hero" onClick={close}>
                 {t('home')}
-              </Link>
+              </a>
               <a href="#projects" onClick={close}>
                 {t('projects')}
               </a>

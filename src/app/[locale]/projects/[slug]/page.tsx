@@ -40,7 +40,6 @@ export async function generateMetadata({
   }
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
 export default async function ProjectPage({
   params,
 }: {

@@ -4,8 +4,6 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-// ─── Variants ────────────────────────────────────────────────────────────────
-
 const titleVariant = {
   hidden: { opacity: 0, y: 48 },
   show: {
@@ -48,12 +46,8 @@ const stagger = (delay = 0, gap = 0.13) => ({
   show: { transition: { staggerChildren: gap, delayChildren: delay } },
 })
 
-// ─── Skill types ─────────────────────────────────────────────────────────────
-
 type Skill = { name: string; level: number }
 type SkillGroup = { category: string; items: Skill[] }
-
-// ─── Dot row ─────────────────────────────────────────────────────────────────
 
 function DotRow({
   total,
@@ -93,8 +87,6 @@ function DotRow({
     </motion.div>
   )
 }
-
-// ─── Component ───────────────────────────────────────────────────────────────
 
 export default function Resume() {
   const t = useTranslations('Resume')
@@ -143,7 +135,6 @@ export default function Resume() {
   return (
     <section id="resume" className="bg-sepia-light py-20 md:py-32 relative text-sepia-darkest">
       <div className="mx-auto max-w-4xl px-4 md:px-6">
-        {/* Title */}
         <motion.h2
           variants={titleVariant}
           initial="hidden"
@@ -154,14 +145,10 @@ export default function Resume() {
           {t('title')}
         </motion.h2>
 
-        {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
-          {/* Left border column */}
           <div className="md:col-span-1 border-b md:border-b-0 md:border-r border-sepia-dark mb-6 md:mb-0 md:h-full" />
 
-          {/* Right column */}
           <div className="md:col-span-2 space-y-12 md:space-y-20">
-            {/* 1. Intro */}
             <motion.p
               variants={fadeUp}
               initial="hidden"
@@ -172,7 +159,6 @@ export default function Resume() {
               {t('intro')}
             </motion.p>
 
-            {/* 2. Skills */}
             <div className="space-y-10">
               <motion.h3
                 variants={fadeUp}
@@ -226,11 +212,8 @@ export default function Resume() {
               className="border-sepia-dark/20"
             />
 
-            {/* 3. Nested Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start">
-              {/* ── Left sub-column ── */}
               <div className="space-y-12 md:space-y-16">
-                {/* Education */}
                 <section>
                   <motion.h3
                     variants={fadeUp}
@@ -270,7 +253,6 @@ export default function Resume() {
                   </motion.div>
                 </section>
 
-                {/* Languages */}
                 <section>
                   <motion.h3
                     variants={fadeUp}
@@ -303,7 +285,6 @@ export default function Resume() {
                   </motion.ul>
                 </section>
 
-                {/* Certifications */}
                 <section>
                   <motion.h3
                     variants={fadeUp}
@@ -336,11 +317,8 @@ export default function Resume() {
                   </motion.div>
                 </section>
               </div>
-              {/* ── end left sub-column ── */}
 
-              {/* ── Right sub-column ── */}
               <div className="space-y-12 md:space-y-16">
-                {/* Experience */}
                 <section>
                   <motion.h3
                     variants={fadeUp}
@@ -359,7 +337,6 @@ export default function Resume() {
                     viewport={{ once: true, amount: 0.15 }}
                     className="space-y-8 md:space-y-10"
                   >
-                    {/* Calvergy */}
                     <motion.div variants={slideLeft} className="space-y-1.5">
                       <span className="text-xs uppercase tracking-widest opacity-50">
                         Oct 2025 – Jan 2026
@@ -373,7 +350,6 @@ export default function Resume() {
                       <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expCalvergy')}</p>
                     </motion.div>
 
-                    {/* Freelance */}
                     <motion.div variants={slideLeft} className="space-y-1.5">
                       <span className="text-xs uppercase tracking-widest opacity-50">
                         2024 – 2025
@@ -387,7 +363,6 @@ export default function Resume() {
                       <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expFreelance')}</p>
                     </motion.div>
 
-                    {/* Naarvan */}
                     <motion.div variants={slideLeft} className="space-y-1.5">
                       <span className="text-xs uppercase tracking-widest opacity-50">
                         2020 – 2023
@@ -401,7 +376,6 @@ export default function Resume() {
                       <p className="text-sm leading-relaxed opacity-80 pt-1">{t('expNaarvan')}</p>
                     </motion.div>
 
-                    {/* Rahavard */}
                     <motion.div variants={slideLeft} className="space-y-1.5">
                       <span className="text-xs uppercase tracking-widest opacity-50">
                         2016 – 2020
@@ -417,7 +391,6 @@ export default function Resume() {
                   </motion.div>
                 </section>
 
-                {/* Download CV */}
                 <motion.a
                   variants={popIn}
                   initial="hidden"
@@ -430,16 +403,11 @@ export default function Resume() {
                   {t('download')}
                 </motion.a>
               </div>
-              {/* ── end right sub-column ── */}
             </div>
-            {/* ── end nested grid ── */}
           </div>
-          {/* ── end right column ── */}
         </div>
-        {/* ── end main grid ── */}
       </div>
 
-      {/* Decorative SVGs */}
       <motion.div
         initial={{ opacity: 0, x: -20, y: 20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}

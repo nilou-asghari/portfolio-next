@@ -41,7 +41,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           {children}
 
-          {/* Toast notifications for contact form feedback */}
           <Toaster
             position="bottom-right"
             toastOptions={{

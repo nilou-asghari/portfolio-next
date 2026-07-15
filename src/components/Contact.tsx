@@ -10,8 +10,6 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { motion } from 'framer-motion'
 
-// ─── Schema ───────────────────────────────────────────────────────────────────
-
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
@@ -19,8 +17,6 @@ const contactSchema = z.object({
 })
 
 type ContactFormData = z.infer<typeof contactSchema>
-
-// ─── Variants ────────────────────────────────────────────────────────────────
 
 const titleVariant = {
   hidden: { opacity: 0, y: 48 },
@@ -64,8 +60,6 @@ const stagger = (delay = 0, gap = 0.13) => ({
   show: { transition: { staggerChildren: gap, delayChildren: delay } },
 })
 
-// ─── Component ───────────────────────────────────────────────────────────────
-
 export default function Contact() {
   const t = useTranslations('contact')
   const [loading, setLoading] = useState(false)
@@ -101,7 +95,6 @@ export default function Contact() {
       id="contact"
       className="bg-sepia-light py-20 md:py-32 relative overflow-hidden text-sepia-darkest"
     >
-      {/* Decorative SVGs */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -121,7 +114,6 @@ export default function Contact() {
       </motion.div>
 
       <div className="mx-auto max-w-6xl md:max-w-7xl px-6 md:px-12 relative z-10">
-        {/* Title */}
         <motion.h2
           variants={titleVariant}
           initial="hidden"
@@ -133,7 +125,6 @@ export default function Contact() {
         </motion.h2>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          {/* Left — contact info */}
           <motion.div
             variants={stagger(0.1, 0.15)}
             initial="hidden"
@@ -141,7 +132,6 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.3 }}
             className="md:col-span-1 border-b md:border-b-0 md:border-r border-sepia-dark p-4 md:p-6 space-y-5"
           >
-            {/* Email */}
             <motion.div variants={slideLeft}>
               <p className="text-sm uppercase tracking-widest font-medium opacity-50 mb-1">
                 {t('email')}
@@ -154,7 +144,6 @@ export default function Contact() {
               </a>
             </motion.div>
 
-            {/* Location */}
             <motion.div variants={slideLeft}>
               <p className="text-sm uppercase tracking-widest font-medium opacity-50 mb-1">
                 {t('location')}
@@ -162,7 +151,6 @@ export default function Contact() {
               <p className="text-sm opacity-70">Karlsruhe, Germany</p>
             </motion.div>
 
-            {/* LinkedIn */}
             <motion.div variants={slideLeft}>
               <p className="text-sm uppercase tracking-widest font-medium opacity-50 mb-1">
                 LinkedIn
@@ -177,7 +165,6 @@ export default function Contact() {
               </a>
             </motion.div>
 
-            {/* GitHub */}
             <motion.div variants={slideLeft}>
               <p className="text-sm uppercase tracking-widest font-medium opacity-50 mb-1">
                 GitHub
@@ -193,7 +180,6 @@ export default function Contact() {
             </motion.div>
           </motion.div>
 
-          {/* Form */}
           <motion.form
             variants={stagger(0.15, 0.12)}
             initial="hidden"
@@ -217,7 +203,6 @@ export default function Contact() {
               {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
             </motion.div>
 
-            {/* Email */}
             <motion.div variants={fadeUp}>
               <label htmlFor="email" className="block text-sm mb-2">
                 {t('email')}
@@ -232,7 +217,6 @@ export default function Contact() {
               {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
             </motion.div>
 
-            {/* Message */}
             <motion.div variants={fadeUp}>
               <label htmlFor="message" className="block text-sm mb-2">
                 {t('message')}
@@ -249,7 +233,6 @@ export default function Contact() {
               )}
             </motion.div>
 
-            {/* Submit */}
             <motion.div variants={popIn}>
               <button
                 type="submit"

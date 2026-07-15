@@ -5,18 +5,11 @@ import { z } from 'zod'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-// ─── Server-side schema ───────────────────────────────────────────────────────
-// Zod also runs here on the server — client validation can be bypassed
-// by anyone calling the server action directly.
-
 const schema = z.object({
   name: z.string().min(2).max(100),
   email: z.string().email(),
   message: z.string().min(10).max(2000),
 })
-
-// ─── HTML escape helper ───────────────────────────────────────────────────────
-// Prevents raw HTML/script injection in the email body.
 
 function escapeHtml(str: string): string {
   return str
@@ -27,8 +20,6 @@ function escapeHtml(str: string): string {
     .replace(/'/g, '&#039;')
 }
 
-// ─── Action ───────────────────────────────────────────────────────────────────
-
 type EmailPayload = {
   name: string
   email: string
@@ -36,7 +27,6 @@ type EmailPayload = {
 }
 
 export async function sendEmail(payload: EmailPayload): Promise<{ success: boolean }> {
-  // Validate on the server before touching Resend
   const result = schema.safeParse(payload)
   if (!result.success) {
     console.error('Invalid email payload:', result.error.flatten())
@@ -45,14 +35,12 @@ export async function sendEmail(payload: EmailPayload): Promise<{ success: boole
 
   const { name, email, message } = result.data
 
-  // Escape all user input before embedding in HTML
   const safeName = escapeHtml(name)
   const safeEmail = escapeHtml(email)
   const safeMessage = escapeHtml(message)
 
   try {
     await resend.emails.send({
-
       from: 'Portfolio <onboarding@resend.dev>',
       to: 'nilou.asghari@gmail.com',
       subject: `New message from ${safeName}`,

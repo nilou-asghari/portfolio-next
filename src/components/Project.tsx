@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { projects } from '@/data/projects'
 
-// ─── Variants ────────────────────────────────────────────────────────────────
-
 const titleVariant = {
   hidden: { opacity: 0, y: 48 },
   show: {
@@ -57,8 +55,6 @@ const infoReveal = {
   },
 }
 
-// ─── Component ───────────────────────────────────────────────────────────────
-
 export default function Project() {
   const t = useTranslations('projects')
   const locale = useLocale()
@@ -77,7 +73,6 @@ export default function Project() {
           {t('title')}
         </motion.h2>
 
-        {/* Section description */}
         <div className="mb-12 md:mb-20">
           <motion.p
             variants={fadeUp}
@@ -122,7 +117,6 @@ export default function Project() {
                     />
                   </motion.div>
 
-                  {/* ── Info block ── */}
                   <motion.div
                     variants={infoReveal}
                     initial="hidden"
@@ -131,7 +125,6 @@ export default function Project() {
                     className="border-b border-sepia-dark/10 pb-6 md:pb-8 transition-all duration-300 group-hover:border-sepia-dark/40"
                   >
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                      {/* Left: category, title, description */}
                       <div className="flex-1">
                         <p className="text-sm uppercase tracking-widest opacity-50 mb-2">
                           {project.categories[0]}
@@ -144,13 +137,11 @@ export default function Project() {
                         </p>
                       </div>
 
-                      {/* Right: year */}
                       <span className="text-sm font-light italic opacity-60 shrink-0 md:pt-1 transition-all duration-300 group-hover:opacity-100">
                         {project.year}
                       </span>
                     </div>
 
-                    {/* ── Tech stack tags ── */}
                     <div className="mt-4 flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
                         <span

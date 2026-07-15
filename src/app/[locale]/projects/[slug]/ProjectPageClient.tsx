@@ -4,8 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
-// ─── Types ───────────────────────────────────────────────────────────────────
-
 type Project = {
   slug: string
   title: string
@@ -39,8 +37,6 @@ type Props = {
   labels: Labels
   locale: string
 }
-
-// ─── Variants ────────────────────────────────────────────────────────────────
 
 const titleVariant = {
   hidden: { opacity: 0, y: 64 },
@@ -83,8 +79,6 @@ const metaItem = {
   },
 }
 
-// ─── Reusable animated section wrapper ───────────────────────────────────────
-
 function AnimatedSection({
   children,
   className,
@@ -105,14 +99,10 @@ function AnimatedSection({
   )
 }
 
-// ─── Component ───────────────────────────────────────────────────────────────
-
 export default function ProjectPageClient({ project, nextProject, labels, locale }: Props) {
   return (
     <>
-      {/* ── HERO ── */}
       <section className="relative">
-        {/* Giant title */}
         <div className="relative bg-sepia-lightest h-32 md:h-48 mx-auto max-w-6xl px-6">
           <div className="absolute -bottom-[1.8rem] md:-bottom-[3.6rem]">
             <motion.h1
@@ -126,7 +116,6 @@ export default function ProjectPageClient({ project, nextProject, labels, locale
           </div>
         </div>
 
-        {/* Meta info */}
         <div className="bg-sepia-light py-32">
           <div className="mx-auto max-w-4xl px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -138,13 +127,11 @@ export default function ProjectPageClient({ project, nextProject, labels, locale
                 animate="show"
                 className="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8"
               >
-                {/* Year */}
                 <motion.div variants={metaItem}>
                   <p className="text-sm uppercase tracking-widest opacity-50 mb-2">{labels.year}</p>
                   <p className="text-xl font-bold">{project.year}</p>
                 </motion.div>
 
-                {/* Category */}
                 <motion.div variants={metaItem}>
                   <p className="text-sm uppercase tracking-widest opacity-50 mb-2">
                     {labels.categories}
@@ -154,7 +141,6 @@ export default function ProjectPageClient({ project, nextProject, labels, locale
                   </p>
                 </motion.div>
 
-                {/* Live link — only rendered when a URL exists */}
                 {project.live && (
                   <motion.div variants={metaItem}>
                     <p className="text-sm uppercase tracking-widest opacity-50 mb-2">Live</p>
@@ -172,7 +158,6 @@ export default function ProjectPageClient({ project, nextProject, labels, locale
               </motion.div>
             </div>
 
-            {/* Tech stack — tags, not a comma string */}
             <motion.div
               variants={stagger(0.55, 0.08)}
               initial="hidden"

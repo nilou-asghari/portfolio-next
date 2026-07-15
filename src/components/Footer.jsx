@@ -6,9 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-sepia-lightest border-t border-sepia-dark/20 py-8 px-10">
       <div className="mx-auto max-w-4xl px-6 md:px-12 flex items-center justify-between text-sm text-sepia-darkest">
-        {/* Social icons */}
         <div className="flex items-center gap-3">
-          {/* GitHub */}
           <a
             href="https://github.com/nilou-asghari"
             target="_blank"
@@ -29,7 +27,6 @@ export default function Footer() {
             <span className="absolute left-0 bottom-0 h-px w-0 bg-sepia-darkest transition-all duration-300 group-hover:w-full" />
           </a>
 
-          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/niloufarasghari/"
             target="_blank"
@@ -51,12 +48,10 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Copyright */}
         <div className="text-center opacity-70">
           © {new Date().getFullYear()} {t('rights')}
         </div>
 
-        {/* Credit */}
         <div className="opacity-70">
           {t('developed')} <span className="font-semibold">Niloufar</span>
         </div>

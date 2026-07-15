@@ -4,9 +4,6 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 
-// ─── Reusable variants ───────────────────────────────────────────────────────
-
-/** Parent: staggers children with a small delay between each */
 const staggerContainer = {
   hidden: {},
   show: {
@@ -17,7 +14,6 @@ const staggerContainer = {
   },
 }
 
-/** Each text line fades up from 24 px below */
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: {
@@ -27,7 +23,6 @@ const fadeUp = {
   },
 }
 
-/** Buttons pop in with a spring after the text */
 const popIn = {
   hidden: { opacity: 0, scale: 0.88, y: 10 },
   show: {
@@ -38,7 +33,6 @@ const popIn = {
   },
 }
 
-/** Image block slides in from the right */
 const slideFromRight = {
   hidden: { opacity: 0, x: 60, scale: 0.96 },
   show: {
@@ -49,7 +43,6 @@ const slideFromRight = {
   },
 }
 
-/** Decorative SVG spins in gently */
 const spinIn = {
   hidden: { opacity: 0, rotate: -15, scale: 0.9 },
   show: {
@@ -60,18 +53,17 @@ const spinIn = {
   },
 }
 
-// ─── Component ───────────────────────────────────────────────────────────────
-
 export default function Hero() {
   const t = useTranslations('Hero')
 
   return (
-    <section className="min-h-screen flex items-center bg-sepia-light py-20 md:py-32 overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center bg-sepia-light py-20 md:py-32 overflow-hidden"
+    >
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:gap-4 px-6 md:px-12 md:grid-cols-2 w-full">
-        {/* ── Image ── */}
         <div className="order-first md:order-last flex justify-center md:justify-start">
           <div className="group relative w-64 h-64 md:w-90 md:h-110 shrink-0">
-            {/* Profile photo slides in */}
             <motion.div
               variants={slideFromRight}
               initial="hidden"
@@ -82,12 +74,12 @@ export default function Hero() {
                 src="/profile5.png"
                 alt="Niloufar Asghari – Frontend Developer"
                 fill
+                sizes="(max-width: 768px) 256px, 360px"
                 className="object-contain transition-all duration-700 ease-out group-hover:scale-[1.02]"
                 priority
               />
             </motion.div>
 
-            {/* Decorative SVG spins in behind */}
             <motion.div
               variants={spinIn}
               initial="hidden"
@@ -99,20 +91,19 @@ export default function Hero() {
                 alt=""
                 aria-hidden="true"
                 fill
+                loading="eager"
                 className="rounded-full border-4 border-amber-50 object-cover transition-all duration-700 ease-out group-hover:rotate-2"
               />
             </motion.div>
           </div>
         </div>
 
-        {/* ── Content ── */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="show"
           className="flex flex-col justify-center text-center md:text-left order-last md:order-first"
         >
-          {/* Eyebrow */}
           <motion.p
             variants={fadeUp}
             className="text-sm md:text-base uppercase tracking-[0.25em] text-sepia-darkest/60"
@@ -120,7 +111,6 @@ export default function Hero() {
             {t('intro')}
           </motion.p>
 
-          {/* Headline */}
           <motion.h1
             variants={fadeUp}
             className="mt-3 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-sepia-dark"
@@ -128,7 +118,6 @@ export default function Hero() {
             {t('frontend')}
           </motion.h1>
 
-          {/* Description */}
           <motion.p
             variants={fadeUp}
             className="mt-5 max-w-lg mx-auto md:mx-0 text-lg md:text-xl leading-relaxed text-sepia-darkest/80"
@@ -136,7 +125,6 @@ export default function Hero() {
             {t('description')}
           </motion.p>
 
-          {/* CTA buttons — staggered pop-in */}
           <motion.div
             variants={staggerContainer}
             className="mt-6 flex flex-col sm:flex-row justify-center md:justify-start gap-4 md:gap-5"
