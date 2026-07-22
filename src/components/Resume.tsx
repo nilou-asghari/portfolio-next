@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -90,6 +90,9 @@ function DotRow({
 
 export default function Resume() {
   const t = useTranslations('Resume')
+  const locale = useLocale()
+
+  const cvFile = locale === 'de' ? '/cv-de.pdf' : '/cv-en.pdf'
 
   // 5 = expert / daily use   4 = proficient   3 = comfortable   2 = familiar
   const skillGroups: SkillGroup[] = [
@@ -396,8 +399,8 @@ export default function Resume() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, amount: 0.8 }}
-                  href="/niloufar-asghari-cv.pdf"
-                  download
+                  href={cvFile}
+                  download="Niloufar-Asghari-CV.pdf"
                   className="inline-block w-full text-center py-2.5 md:py-3 border border-sepia-darkest text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 ease-out hover:bg-sepia-darkest hover:text-sepia-lightest"
                 >
                   {t('download')}
